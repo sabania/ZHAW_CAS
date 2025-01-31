@@ -1,0 +1,17 @@
+In today's world, communication across different languages is essential. Consider the following XML snippet that represents a multilingual greeting system:
+
+xml
+Kopieren
+Bearbeiten
+<messages>
+    <greeting lang="en">Hello, world!</greeting>
+    <greeting lang="es">¡Hola, mundo!</greeting>
+    <greeting lang="fr">Bonjour, le monde!</greeting>
+</messages>
+This structure allows applications to easily fetch a greeting based on the user's preferred language. For example, if a user selects Spanish, the system retrieves:
+
+xml
+Kopieren
+Bearbeiten
+<greeting lang="es">¡Hola, mundo!</greeting>
+Such XML-based approaches are widely used in localization and internationalization of software applications.

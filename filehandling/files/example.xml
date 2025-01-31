@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- create multilingual xml -->
 <root>
-    <segment lang="en">Hello</segment>
-    <segment lang="de">Hallo</segment>
+    <!-- Segment 1 - Hello World -->
+    <segment id="1" lang="en" translate="yes">
+        <text>Hello, world!</text>
+        <metadata>
+            <author>John Doe</author>
+            <timestamp>2025-01-31T12:00:00Z</timestamp>
+        </metadata>
+        <source>System Generated</source>
+    </segment>
+    <!-- Segment 2 - Good Morning -->
+    <segment id="2" lang="en" translate="no">
+        <text>Good morning, everyone!</text>
+        <metadata>
+            <author>Jane Smith</author>
+            <timestamp>2025-02-01T08:15:00Z</timestamp>
+        </metadata>
+        <source>Manual Entry</source>
+    </segment>
+    <!-- Segment 3 - Welcome Message -->
+    <segment id="3" lang="en" translate="yes">
+        <text>Welcome to our platform!</text>
+        <metadata>
+            <author>Alex Johnson</author>
+            <timestamp>2025-02-02T10:30:00Z</timestamp>
+        </metadata>
+        <source>AI Generated</source>
+    </segment>
 </root>

@@ -1,18 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
-    <segment lang="en">
+    <!-- Segment 1 - Hello World -->
+    <segment id="1" lang="en" translate="yes">
         <text>Hello, world!</text>
+        <metadata>
+            <author>John Doe</author>
+            <timestamp>2025-01-31T12:00:00Z</timestamp>
+        </metadata>
+        <source>System Generated</source>
     </segment>
-    <segment lang="es">
-        <text>¡Hola, mundo!</text>
+
+    <segment id="1" lang="de" translate="no">
+        <text></text>
+        <metadata>
+            <author></author>
+            <timestamp></timestamp>
+        </metadata>
+        <source></source>
     </segment>
-    <segment lang="fr">
-        <text>Bonjour, le monde!</text>
+
+    <segment id="1" lang="fr" translate="no">
+        <text></text>
+        <metadata>
+            <author></author>
+            <timestamp></timestamp>
+        </metadata>
+        <source></source>
     </segment>
-    <segment lang="de">
-        <text>Hallo, Welt!</text>
+
+    <segment id="1" lang="it" translate="no">
+        <text></text>
+        <metadata>
+            <author></author>
+            <timestamp></timestamp>
+        </metadata>
+        <source></source>
     </segment>
-    <segment lang="zh">
-        <text>你好，世界！</text>
+
+    <!-- Segment 2 - Good Morning -->
+    <segment id="2" lang="en" translate="no">
+        <text>Good morning, everyone!</text>
+        <metadata>
+            <author>Jane Smith</author>
+            <timestamp>2025-02-01T08:15:00Z</timestamp>
+        </metadata>
+        <source>Manual Entry</source>
+    </segment>
+
+    <segment id="2" lang="de" translate="no">
+        <text></text>
+        <metadata>
+            <author></author>
+            <timestamp></timestamp>
+        </metadata>
+        <source></source>
+    </segment>
+
+    <segment id="2" lang="fr" translate="no">
+        <text></text>
+        <metadata>
+            <author></author>
+            <timestamp></timestamp>
+        </metadata>
+        <source></source>
+    </segment>
+
+    <segment id="2" lang="it" translate="no">
+        <text></text>
+        <metadata>
+            <author></author>
+            <timestamp></timestamp>
+        </metadata>
+        <source></source>
+    </segment>
+
+    <!-- Segment 3 - Welcome Message -->
+    <segment id="3" lang="en" translate="yes">
+        <text>Welcome to our platform!</text>
+        <metadata>
+            <author>Alex Johnson</author>
+            <timestamp>2025-02-02T10:30:00Z</timestamp>
+        </metadata>
+        <source>AI Generated</source>
+    </segment>
+
+    <segment id="3" lang="de" translate="no">
+        <text></text>
+        <metadata>
+            <author></author>
+            <timestamp></timestamp>
+        </metadata>
+        <source></source>
+    </segment>
+
+    <segment id="3" lang="fr" translate="no">
+        <text></text>
+        <metadata>
+            <author></author>
+            <timestamp></timestamp>
+        </metadata>
+        <source></source>
+    </segment>
+
+    <segment id="3" lang="it" translate="no">
+        <text></text>
+        <metadata>
+            <author></author>
+            <timestamp></timestamp>
+        </metadata>
+        <source></source>
     </segment>
 </document>
