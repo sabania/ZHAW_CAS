@@ -1,0 +1,864 @@
+<?xml version="1.0"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Guid="8817bf46-035a-4de2-842f-90a568068adc" SettingsBundleGuid="605cb924-3079-415a-859d-641534e70f12" Version="4.0.0.0" Owner="APOSTROPH\ASA" ProjectTemplateGuid="10004f3b-4acf-4425-a3e3-38d3b3514276" ReferenceProjectGuid="00000000-0000-0000-0000-000000000000">
+  <LanguageDirections>
+    <LanguageDirection Guid="a9baa488-dbaf-4751-b690-029ffe059dcc" SettingsBundleGuid="0be3275b-d779-4740-93e0-44bb499e8fc7" TargetLanguageCode="de-DE" SourceLanguageCode="en-US">
+      <AutoSuggestDictionaries />
+      <CascadeItem OverrideParent="false" StopSearchingWhenResultsFound="false" />
+    </LanguageDirection>
+  </LanguageDirections>
+  <TermbaseConfiguration>
+    <RecognitionOptions>
+      <ShowWithNoAvailableTranslation>false</ShowWithNoAvailableTranslation>
+      <MinimumMatchValue>70</MinimumMatchValue>
+      <SearchDepth>200</SearchDepth>
+      <SearchOrder>Parallel</SearchOrder>
+    </RecognitionOptions>
+  </TermbaseConfiguration>
+  <SettingsBundles>
+    <SettingsBundle Guid="605cb924-3079-415a-859d-641534e70f12">
+      <SettingsBundle>
+        <SettingsGroup Id="FileTypeManagerConfigurationSettingsGroup">
+          <Setting Id="FileTypeManagerConfigurationSettings">
+            <FileTypeManagerConfigurationList xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sdl.com/projectapi">
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>SDL XLIFF 1.0 v 1.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Zweisprachiges Dateiformat, das dem OASIS XLIFF-Standard Version 1.2 entspricht und in dem teilweise bzw. vollständig übersetzte Inhalte und entsprechende Zusatzinformationen gespeichert werden.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[sS][dD][lL][xX][lL][iI][fF][fF]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.sdlxliff</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>SDL XLIFF 1.0 v 1.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>SDL XLIFF-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>SDL XLIFF-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>SDL XLIFF</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>XML v 2.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>(Geben Sie hier die Beschreibung des Dateityps ein)</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[xX][mM][lL]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.xml</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>Kopie von XML v 2.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>XML-Vorlagendokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>XML-Vorlagendokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>ZHAW</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>WordprocessingML v. 2</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Dokumente, die mit Microsoft Word 2007-2019 erstellt wurden, inkl. Dokumente, die in Google Docs und LibreOffice im Microsoft Word-Format gespeichert wurden.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[dD][oO][cC][xX]$)|(^[\d\D]*\.[dD][oO][tT][xX]$)|(^[\d\D]*\.[dD][oO][cC][mM]$)|(^[\d\D]*\.[dD][oO][tT][mM]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.docx;*.dotx;*.docm;*.dotm</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>WordprocessingML v. 2</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>Microsoft Word 2007-2019-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>Microsoft Word 2007-2019-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>Microsoft Word 2007-2019</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>DOC v 2.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Mit Microsoft Word 97-2003 und WPS Writer erstellte Dokumente</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[dD][oO][cC]$)|(^[\d\D]*\.[dD][oO][tT]$)|(^[\d\D]*\.[wW][pP][sS]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.doc;*.dot;*.wps</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>DOC v 2.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>Microsoft Word 97-2003-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>Microsoft Word 97-2003-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>Microsoft Word 97-2003</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>PresentationML v. 1</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Dokumente, die mit Microsoft PowerPoint 2007-2019 erstellt wurden, inkl. Dokumente, die in Google Docs und LibreOffice im Microsoft PowerPoint-Format gespeichert wurden.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[pP][pP][tT][xX]$)|(^[\d\D]*\.[pP][pP][sS][xX]$)|(^[\d\D]*\.[pP][oO][tT][xX]$)|(^[\d\D]*\.[pP][pP][tT][mM]$)|(^[\d\D]*\.[pP][oO][tT][mM]$)|(^[\d\D]*\.[pP][pP][sS][mM]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.pptx;*.ppsx;*.potx;*.pptm;*.potm;*.ppsm</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>PresentationML v. 1</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>Microsoft PowerPoint 2007-2019-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>Microsoft PowerPoint 2007-2019-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>Microsoft PowerPoint 2007-2019</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>PPT v 2.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Mit Microsoft PowerPoint 97/2003 bzw. WPS Presentation erstellte Dokumente</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[pP][pP][tT]$)|(^[\d\D]*\.[pP][pP][sS]$)|(^[\d\D]*\.[pP][oO][tT]$)|(^[\d\D]*\.[dD][pP][sS]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.ppt;*.pps;*.pot;*.dps</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>PPT v 2.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>Microsoft PowerPoint 97/2003-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>Microsoft PowerPoint 97/2003-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>Microsoft PowerPoint 97/2003</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>SpreadsheetML v. 1</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Dokumente, die mit Microsoft Excel 2007-2019 erstellt wurden, inkl. Dokumente, die in Google Docs und LibreOffice im Microsoft Excel-Format gespeichert wurden.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[xX][lL][sS][xX]$)|(^[\d\D]*\.[xX][lL][sS][mM]$)|(^[\d\D]*\.[xX][lL][tT][xX]$)|(^[\d\D]*\.[xX][lL][tT][mM]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.xlsx;*.xlsm;*.xltx;*.xltm</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>SpreadsheetML v. 1</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>Microsoft Excel 2007-2019-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>Microsoft Excel 2007-2019-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>Microsoft Excel 2007-2019</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>XLS v 3.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Mit Microsoft Excel 97-2003 bzw. WPS Writer erstellte Dokumente</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[xX][lL][sS]$)|(^[\d\D]*\.[xX][lL][tT]$)|(^[\d\D]*\.[eE][tT]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.xls;*.xlt;*.et</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>XLS v 3.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>Microsoft Excel 97-2003-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>Microsoft Excel 97-2003-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>Microsoft Excel 97-2003</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>Bilingual Excel v 1.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Microsoft Excel (2007-2016)-Dateien mit zweisprachiger Struktur. Der zu übersetzende Text wird in einer Spalte angezeigt, und der übersetzte Text sollte in eine andere Spalte eingefügt werden. In der Standardeinstellung enthält die erste Spalte den ausgangssprachlichen Text und die zweite Spalte die Übersetzung.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[xX][lL][sS][xX]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.xlsx</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>Bilingual Excel v 1.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>Zweisprachiges Excel-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>Zweisprachige Excel-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>Zweisprachige Excel</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>EMAIL v 1.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Nachrichtendateien (.msg)</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[mM][sS][gG]$)|(^[\d\D]*\.[oO][fF][tT]$)|(^[\d\D]*\.[eE][mM][lL]$)|(^[\d\D]*\.[eE][mM][lL][xX]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.msg;*.oft;*.eml;*.emlx</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>EMAIL v 1.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>E-Mail-Datei</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>E-Mail-Dateien</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>E-Mail:</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>RTF v 2.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Rich Text Format (RTF)-Dokumente (von Microsoft Word bzw. anderen Anwendungen erzeugt). Einsprachige getaggte RTF-Dateien, wie man sie von SDL Trados kennt, werden auch unterstützt.HINWEIS: RTF- Dokumente, die bereits Übersetzungseinheiten enthalten, werden jedoch nicht unterstützt.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[rR][tT][fF]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.rtf</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>RTF v 2.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>Rich Text Format (RTF)-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>Rich Text Format (RTF)-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>Rich Text-Format (RTF)</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>Visio v 1.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Mit Microsoft Visio 2016 erstellte Dokumente</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[vV][sS][dD][xX]$)|(^[\d\D]*\.[vV][sS][xX]$)|(^[\d\D]*\.[vV][tT][xX]$)|(^[\d\D]*\.[vV][dD][xX]$)|(^[\d\D]*\.[vV][sS][sS][xX]$)|(^[\d\D]*\.[vV][sS][tT][xX]$)|(^[\d\D]*\.[vV][sS][dD][mM]$)|(^[\d\D]*\.[vV][sS][sS][mM]$)|(^[\d\D]*\.[vV][sS][tT][mM]$)|(^$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.vsdx;*.vsx;*.vtx;*.vdx;*.vssx;*.vstx;*.vsdm;*.vssm;*.vstm;</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>Visio v 1.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>Microsoft Visio-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>Microsoft Visio-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>Microsoft Visio</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>XHTML 1.1 v 2.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>XHTML™ 1.1 - Modulbasiertes XHTML</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[hH][tT][mM][lL]$)|(^[\d\D]*\.[hH][tT][mM]$)|(^[\d\D]*\.[xX][hH][tT][mM][lL]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.html;*.htm;*.xhtml</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>XHTML 1.1 v 2.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>XHTML 1.1-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>XHTML 1.1-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>XHTML 1.1 (2)</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>Html 5 2.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Auf dem W3C HTML5-Standard basierende Dokumente.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[hH][tT][mM]$)|(^[\d\D]*\.[hH][tT][mM][lL]$)|(^[\d\D]*\.[xX][hH][tT][mM][lL]$)|(^[\d\D]*\.[jJ][sS][pP]$)|(^[\d\D]*\.[aA][sS][pP]$)|(^[\d\D]*\.[aA][sS][pP][xX]$)|(^[\d\D]*\.[aA][sS][cC][xX]$)|(^[\d\D]*\.[iI][nN][cC]$)|(^[\d\D]*\.[pP][hH][pP]$)|(^[\d\D]*\.[hH][hH][kK]$)|(^[\d\D]*\.[hH][hH][cC]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.htm;*.html;*.xhtml;*.jsp;*.asp;*.aspx;*.ascx;*.inc;*.php;*.hhk;*.hhc</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>Html 5 2.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>Html-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>Html-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>HTML 5</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>FrameMaker v 10.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Aus Adobe FrameMaker exportierte Maker Interchange Format (MIF)-Dateien</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[mM][iI][fF]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.mif</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>FrameMaker v 10.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>Adobe FrameMaker-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>Adobe FrameMaker-Dokumente </d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>Adobe FrameMaker 8-2022 MIF V2</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>FrameMaker 8.0 v 2.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Aus Adobe FrameMaker exportierte Maker Interchange Format (MIF)-Dateien.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[mM][iI][fF]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.mif</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>FrameMaker 8.0 v 2.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>Adobe FrameMaker-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>Adobe FrameMaker-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>Adobe FrameMaker 8-2020 MIF</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>Inx 1.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>InDesign Interchange (INX)-Dokumente, die mit Adobe InDesign CS2-CS4 erstellt wurden</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[iI][nN][xX]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.inx</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>Inx 1.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>Adobe InDesign INX-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>Adobe InDesign INX-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>Adobe InDesign CS2-CS4 INX</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>IDML v 1.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Adobe InDesign CS4-CC Markup IDML-Dateien (*.idml)</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[iI][dD][mM][lL]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.idml</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>IDML v 1.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>IDML-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>IDML-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>Adobe InDesign CS4-CC IDML</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>ICML Filter 1.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Mit Adobe InCopy CS4-CC erstellte Dokumente.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[iI][cC][mM][lL]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.icml</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>ICML Filter 1.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>Adobe InCopy CS4-CC ICML</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>Adobe InCopy CS4-CC ICML</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>Adobe InCopy CS4-CC ICML</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>Photoshop v 1.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Mit Adobe Photoshop CC-2018 erstellte Dokumente</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[pP][sS][dD]$)|(^[\d\D]*\.[pP][dD][dD]$)|(^[\d\D]*\.[pP][sS][dD][tT]$)|(^$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.psd;*.pdd;*.psdt;</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>Photoshop v 1.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>Adobe Photoshop-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>Adobe Photoshop-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>Adobe Photoshop</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>Odt 1.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Mit OpenOffice.org Writer, LibreOffice Text Document, Google Docs und IBM Lotus Symphony erstellte Dokumente.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[oO][dD][tT]$)|(^[\d\D]*\.[oO][tT][tT]$)|(^[\d\D]*\.[oO][dD][mM]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.odt;*.ott;*.odm</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>Odt 1.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>OpenDocument-Textdokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>OpenDocument-Textdokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>OpenDocument-Textdokument (ODT)</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>Odp 1.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Mit OpenOffice.org Impress, LibreOffice Presentation, Google Docs und IBM Lotus Symphony erstellte Dokumente.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[oO][dD][pP]$)|(^[\d\D]*\.[oO][tT][pP]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.odp;*.otp</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>Odp 1.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>OpenDocument-Präsentation</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>OpenDocument-Präsentationen</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>OpenDocument-Präsentation (ODP)</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>Ods 1.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Mit OpenOffice.org Calc, LibreOffice Spreadsheet, Google Docs und IBM Lotus Symphony erstellte Dokumente.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[oO][dD][sS]$)|(^[\d\D]*\.[oO][tT][sS]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.ods;*.ots</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>Ods 1.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>OpenDocument-Arbeitsblatt</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>OpenDocument-Arbeitsblätter</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>OpenDocument-Arbeitsblatt (ODS)</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>QuarkXPress v 2.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Getaggte QuarkXPress- und CopyFlow-Dokumente</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[xX][tT][gG]$)|(^[\d\D]*\.[tT][aA][gG]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.xtg;*.tag</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>QuarkXPress v 2.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>QuarkXPress Export-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>QuarkXPress Export-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>QuarkXPress Export</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>XLIFF 1.1-1.2 v 2.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Dokumente, die mit dem OASIS-Standard XLIFF (XML Localisation Interchange File Format) Version 1.1 bzw. 1.2 konform sind.Dokumente können nicht, teilweise oder ganz übersetzt sein.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[xX][lL][fF]$)|(^[\d\D]*\.[xX][lL][iI][fF][fF]$)|(^[\d\D]*\.[xX][lL][zZ]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.xlf;*.xliff;*.xlz</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>XLIFF 1.1-1.2 v 2.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>XLIFF-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>XLIFF-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>XLIFF</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>MemoQ v 1.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>XLIFF-Dokumente mit Kilgray MemoQ-Spezialisierungen.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[mM][qQ][xX][lL][fF]$)|(^[\d\D]*\.[mM][qQ][xX][lL][iI][fF][fF]$)|(^[\d\D]*\.[mM][qQ][xX][lL][zZ]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.mqxlf;*.mqxliff;*.mqxlz</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>MemoQ v 1.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>XLIFF: Kilgray MemoQ-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>XLIFF: Kilgray MemoQ-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>XLIFF: Kilgray MemoQ</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>Memsource Xliff v 1.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Im Memsource-Editor erstellte XLIFF-Dokumente</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[mM][xX][lL][iI][fF][fF]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.mxliff</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>Memsource Xliff v 1.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>XLIFF: Memsource Xliff-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>XLIFF: Memsource Xliff-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>XLIFF: Memsource Xliff</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>XLIFF 2.0 v 1.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Dokumente, die mit dem OASIS XML Localisation Interchange File Format (XLIFF) Standardversion 2.1 kompatibel sind.Die Dokumente können unübersetzt, teilweise übersetzt oder vollständig übersetzt sein.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[xX][lL][fF]$)|(^[\d\D]*\.[xX][lL][iI][fF][fF]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.xlf;*.xliff</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>XLIFF 2.0 v 1.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>XLIFF 2.0-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>XLIFF 2.0-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>XLIFF 2.0</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>PDF v 3.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Portable Document Format (PDF)-Dokumente (generiert von Drittanwendungen)</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[pP][dD][fF]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.pdf</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>PDF v 3.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>PDF-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>PDF-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>PDF</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>CSV v 2.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Textdateien, in denen die einzelnen Zeilen durch Zeilenumbrüche und Werte durch Kommata (,) getrennt sind. Standardmäßig enthält die erste Spalte den ausgangssprachlichen und die zweite den zielsprachlichen Text.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[cC][sS][vV]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.csv</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>CSV v 2.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>Komma-delimitierte Datei (CSV)</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>Komma-delimitierte Dateien (CSV)</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>Komma-delimitierte Textdatei (CSV)</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>Tab Delimited v 2.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Textdateien, in denen die einzelnen Zeilen durch Zeilenumbrüche und Werte durch Tabulatoren getrennt sind. Standardmäßig enthält die erste Spalte den ausgangssprachlichen und die zweite den zielsprachlichen Text.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[tT][xX][tT]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.txt</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>Tab Delimited v 2.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>Tab-delimitierte Textdatei</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>Tab-delimitierte Textdateien</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>Tab-delimitierter Text</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>Java Resources v 2.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Ressourcen-Dateien für Java-Applikationen</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[pP][rR][oO][pP][eE][rR][tT][iI][eE][sS]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.properties</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>Java Resources v 2.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>Java-Ressource</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>Java-Ressourcen</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>Java-Ressourcen</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>PO files v 1.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Von GNU gettext erstellte PO (Portable Object)-Dokumente.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[pP][oO]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.po</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>PO files v 1.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>Portable Object-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>Portable Object-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>Portable Object</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>.NetLibraries v 1.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>.NET-Framework Portable Executable (PE)-Dateien</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[dD][lL][lL]$)|(^[\d\D]*\.[eE][xX][eE]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.dll;*.exe</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>.NetLibraries v 1.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>.NET-Bibliothek</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>.NET-Bibliotheken</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>.NET-Bibliotheken</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>Subtitles v 1.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>SubRip (.srt)-, SubViewer (.sbv)-, Web Video Text Tracks (.vtt)- und Timed Text Markup (.ttml)-Dateien.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[sS][rR][tT]$)|(^[\d\D]*\.[vV][tT][tT]$)|(^[\d\D]*\.[sS][bB][vV]$)|(^[\d\D]*\.[sS][uU][bB]$)|(^[\d\D]*\.[tT][tT][mM][lL]$)|(^[\d\D]*\.[xX][mM][lL]$)|(^[\d\D]*\.[dD][fF][xX][pP]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.srt;*.vtt;*.sbv;*.sub;*.ttml;*.xml;*.dfxp</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>Subtitles v 1.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>Untertiteldatei</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>Untertiteldateien</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>Untertitelformate</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>JSON v 1.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>JavaScript Object Notation (JSON)-Dokumente.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[jJ][sS][oO][nN]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.json</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>JSON v 1.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>JSON-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>JSON-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>JSON</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>YAML v 1.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>YAML (YAML Ain't Markup Language)-Dateien</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[yY][aA][mM][lL]$)|(^[\d\D]*\.[yY][mM][lL]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.yaml;*.yml</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>YAML v 1.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>YAML-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>YAML-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>YAML</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>Markdown v 1.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Dokumente basierend auf Markdown</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[mM][dD]$)|(^[\d\D]*\.[mM][aA][rR][kK][dD][oO][wW][nN]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.md;*.markdown</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>Markdown v 1.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>Markdown-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>Markdown-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>Markdown</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>XML: RESX v 2.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>XML-Filter mit Parser-Regeln für zu übersetzenden Text aus *.resx-Dateien.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[rR][eE][sS][xX]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.resx</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>XML: RESX v 2.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>Microsoft .NET-Ressourcendatei</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>Microsoft .NET-Ressourcendateien</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>XML 2: Microsoft .NET-Ressourcen</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>XML: DITA 1.3 v 2.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Vorkonfigurierter XML-Filter für DITA 1.3-konforme Dateien (DITA = Darwin Information Typing Architecture).</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[xX][mM][lL]$)|(^[\d\D]*\.[dD][iI][tT][aA]$)|(^[\d\D]*\.[dD][iI][tT][aA][mM][aA][pP]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.xml;*.dita;*.ditamap</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>XML: DITA 1.3 v 2.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>DITA XML-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>DITA XML-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>XML 2: OASIS DITA 1.3-konform</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>XML: DocBook 4.5 v 2.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>XML-Dateityp-Einstellungen für die Übersetzung von OASIS DocBook 4.5-Dokumenten.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[xX][mM][lL]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.xml</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>XML: DocBook 4.5 v 2.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>DocBook XML-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>DocBook XML-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>XML 2: OASIS DocBook 4.5-konform</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>XML: Author-IT 1.2 v 2.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Vorkonfigurierter XML-Filter für Author-IT-konforme Dateien</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[xX][mM][lL]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.xml</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>XML: Author-IT 1.2 v 2.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>Author-IT XML-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>Author-IT XML-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>XML 2: Author-IT-konform</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>XML: MadCap 1.2 v 2.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Vorkonfigurierter XML-Filter für MadCap-konforme Dateien.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[hH][tT][mM][lL]$)|(^[\d\D]*\.[hH][tT][mM]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.html;*.htm</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>XML: MadCap 1.2 v 2.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>MadCap XML-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>MadCap XML-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>XML 2: MadCap-konform</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>AEM Sites XML 1.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Vorkonfigurierter XML-Filter für AEM Sites XML-Dateien.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[xX][mM][lL]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.xml</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>AEM Sites XML 1.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>AEM Sites XML-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>AEM Sites XML-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>XML 2: AEM Sites XML</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>XML: ITS 1.0 v 2.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>XML-Dokument, das lokale, eingebettete und/oder explizite Regeln verwendet, die dem W3C Internationalization Tag Set (ITS)-Standard Version 1.0 entsprechen, um zu übersetzenden Text automatisch zu identifizieren und zu verarbeiten.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[xX][mM][lL]$)|(^[\d\D]*\.[iI][tT][sS]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.xml;*.its</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>XML: ITS 1.0 v 2.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>ITS XML-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>ITS XML-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>XML 2: W3C ITS-konform</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>XML: Any v 2.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Beliebiges XML-Dokument bzw. -Fragment, für das keine Regeldefinitionen vorhanden sind. Innerhalb von Elementen stehender Text wird komplett als zu übersetzen behandelt. Beliebige Elemente, die innerhalb dieses Textes stehen, werden als Inline-Tags behandelt.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[xX][mM][lL]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.xml</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>XML: Any v 2.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>XML-Dokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>XML-Dokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>XML 2: Beliebiges XML</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+              <FileTypeManagerConfigurationItem>
+                <Enabled>true</Enabled>
+                <FileTypeDefinitionId>Plain Text v 1.0.0.0</FileTypeDefinitionId>
+                <Profile xmlns:d3p1="http://www.sdl.com/filetypesupport">
+                  <d3p1:Description>Textdateien mit einem Absatz pro Zeile.</d3p1:Description>
+                  <d3p1:Expression>(^[\d\D]*\.[tT][xX][tT]$)</d3p1:Expression>
+                  <d3p1:FileDialogWildcardExpression>*.txt</d3p1:FileDialogWildcardExpression>
+                  <d3p1:FileTypeDefinitionId>Plain Text v 1.0.0.0</d3p1:FileTypeDefinitionId>
+                  <d3p1:FileTypeDocumentName>Textdokument</d3p1:FileTypeDocumentName>
+                  <d3p1:FileTypeDocumentsName>Textdokumente</d3p1:FileTypeDocumentsName>
+                  <d3p1:FileTypeName>Text</d3p1:FileTypeName>
+                </Profile>
+                <Removed>false</Removed>
+              </FileTypeManagerConfigurationItem>
+            </FileTypeManagerConfigurationList>
+          </Setting>
+        </SettingsGroup>
+        <SettingsGroup Id="JSON v 1.0.0.0">
+          <Setting Id="ExtractAllStringValues">False</Setting>
+          <Setting Id="SpecifyRulesForExtracting">True</Setting>
+          <Setting Id="JsonTokens">
+            <ArrayOfJsonTokenSetting xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Sdl.FileTypeSupport.Filters.Json.Settings">
+              <JsonTokenSetting>
+                <DocumentStructureInformation>
+                  <DisplayName>Absatz</DisplayName>
+                  <StructureType>sdl:paragraph</StructureType>
+                </DocumentStructureInformation>
+                <IsTranslatable>true</IsTranslatable>
+                <Path>$.segment</Path>
+                <SidSiblingName>
+                </SidSiblingName>
+              </JsonTokenSetting>
+              <JsonTokenSetting>
+                <DocumentStructureInformation>
+                  <DisplayName>Absatz</DisplayName>
+                  <StructureType>sdl:paragraph</StructureType>
+                </DocumentStructureInformation>
+                <IsTranslatable>true</IsTranslatable>
+                <Path>$..en</Path>
+                <SidSiblingName>
+                </SidSiblingName>
+              </JsonTokenSetting>
+            </ArrayOfJsonTokenSetting>
+          </Setting>
+        </SettingsGroup>
+        <SettingsGroup Id="Kopie von XML v 2.0.0.0">
+          <Setting Id="Xml_WithinText_Rule_1CtxMustUseDisplayName">True</Setting>
+          <Setting Id="Xml_WithinText_Rule_1Context">True</Setting>
+          <Setting Id="Xml_Translate_Rule_1Translate">no</Setting>
+          <Setting Id="Xml_Translate_Rule_1CtxMustUseDisplayName">True</Setting>
+          <Setting Id="Xml_WithinText_Rule_1XPathSelector">/*</Setting>
+          <Setting Id="Xml_WithinText_Rule_1">True</Setting>
+          <Setting Id="Xml_WithinText_Rule_0CtxMustUseDisplayName">True</Setting>
+          <Setting Id="Xml_Translate_Rule_1Context">True</Setting>
+          <Setting Id="Xml_NS_List_">True</Setting>
+          <Setting Id="SnifferNamespaces">True</Setting>
+          <Setting Id="SnifferXPaths">True</Setting>
+          <Setting Id="SnifferRootElements0">document</Setting>
+          <Setting Id="SnifferRootElements">True</Setting>
+          <Setting Id="DocTypeNames">True</Setting>
+          <Setting Id="SchemaLocations">True</Setting>
+          <Setting Id="ElementData">True</Setting>
+          <Setting Id="ElementData0">True</Setting>
+          <Setting Id="ElementData0Name">document</Setting>
+          <Setting Id="ElementData0IsInline">no</Setting>
+          <Setting Id="ElementData0IsInlinePlaceholder" />
+          <Setting Id="ElementData1">True</Setting>
+          <Setting Id="ElementData1Name">segment</Setting>
+          <Setting Id="ElementData1IsInline">no</Setting>
+          <Setting Id="ElementData1IsInlinePlaceholder" />
+          <Setting Id="ElementData1AttributeData">True</Setting>
+          <Setting Id="ElementData1AttributeData0">lang</Setting>
+          <Setting Id="ElementData2">True</Setting>
+          <Setting Id="ElementData2Name">text</Setting>
+          <Setting Id="ElementData2IsInline">no</Setting>
+          <Setting Id="ElementData2IsInlinePlaceholder" />
+          <Setting Id="DefaultOverridesList">True</Setting>
+          <Setting Id="RemoveDefaultOverridesList">True</Setting>
+          <Setting Id="Xml_WithinText_Rule_0Context">True</Setting>
+          <Setting Id="Xml_Translate_Rule_1XPathSelector">/*</Setting>
+          <Setting Id="Xml_Translate_Rule_1">True</Setting>
+          <Setting Id="Xml_Translate_Rule_0Translate">yes</Setting>
+          <Setting Id="CdataProcessorId" />
+          <Setting Id="Xml_Translate_Rule_0CtxMustUseDisplayName">True</Setting>
+          <Setting Id="Xml_Translate_Rule_0Context">True</Setting>
+          <Setting Id="Xml_Translate_Rule_0XPathSelector">//segment[@lang='en']/text</Setting>
+          <Setting Id="Xml_Translate_Rule_0">True</Setting>
+          <Setting Id="Xml_WithinText_Rule_0XPathSelector">//segment[@lang='en']/text</Setting>
+          <Setting Id="Xml_NS_NamespaceUse">UseMappedNamespace</Setting>
+          <Setting Id="Xml_WithinText_Rule_0">True</Setting>
+          <Setting Id="Xml_WithinText_Rule_">True</Setting>
+          <Setting Id="Xml_Translate_Rule_">True</Setting>
+        </SettingsGroup>
+        <SettingsGroup Id="Markdown v 1.0.0.0">
+          <Setting Id="SettingSubContentFileTypeIdForCodeBlocks">Embedded Content Plain Text v 1.0.0.0</Setting>
+          <Setting Id="SettingSubContentFileTypeIdForHtmlBlocks">Embedded Content Plain Text v 1.0.0.0</Setting>
+        </SettingsGroup>
+        <SettingsGroup Id="Plain Text v 1.0.0.0">
+          <Setting Id="StructureRules0ClosingPattern">&lt;/greeting&gt;</Setting>
+          <Setting Id="StructureRules0OpeningPattern">&lt;greeting lang="en"&gt;</Setting>
+          <Setting Id="StructureRules0">True</Setting>
+          <Setting Id="StructureRules">True</Setting>
+        </SettingsGroup>
+        <SettingsGroup Id="SettingsTermVerifier">
+          <Setting Id="Enabled">True</Setting>
+          <Setting Id="ForbiddenDefValues">True</Setting>
+        </SettingsGroup>
+        <SettingsGroup Id="QAVerificationSettings">
+          <Setting Id="RegExRules0">
+            <RegExRule xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Sdl.Verification.QAChecker.RegEx">
+              <Description>Datum</Description>
+              <IgnoreCase>false</IgnoreCase>
+              <RegExSource>\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z</RegExSource>
+              <RegExTarget>\d{2}\.\d{2}\.\d{4} \d{2}:\d{2}:\d{2}</RegExTarget>
+              <RuleCondition>SourceNotTarget</RuleCondition>
+            </RegExRule>
+          </Setting>
+          <Setting Id="RegExRulesCount">1</Setting>
+          <Setting Id="CheckRegEx">True</Setting>
+          <Setting Id="RegExRules">True</Setting>
+          <Setting Id="Enabled">True</Setting>
+          <Setting Id="ElementContextExclusionValue">True</Setting>
+          <Setting Id="ExclusionStringValue">True</Setting>
+          <Setting Id="AbsoluteLengthElements">True</Setting>
+        </SettingsGroup>
+        <SettingsGroup Id="SettingsTagVerifier">
+          <Setting Id="Enabled">True</Setting>
+        </SettingsGroup>
+        <SettingsGroup Id="TerminologyProviderSettings">
+          <Setting Id="Termbases">
+            <ArrayOfTermbase xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Sdl.ProjectApi.Implementation.Xml">
+            </ArrayOfTermbase>
+          </Setting>
+        </SettingsGroup>
+        <SettingsGroup Id="FileViewServiceSettings">
+          <Setting Id="SelectedTargetLanguageCode">de-DE</Setting>
+        </SettingsGroup>
+      </SettingsBundle>
+    </SettingsBundle>
+    <SettingsBundle Guid="1903af60-34f0-45b3-b79d-1a326595e62f">
+      <SettingsBundle>
+        <SettingsGroup Id="IgnoredMessagesSettings">
+          <Setting Id="IgnoredMessagesData">
+            <IgnoredMessagesData xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Sdl.ProjectApi">
+              <IgnoredMessageIds>
+              </IgnoredMessageIds>
+              <IgnoredMessageTypes xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+              </IgnoredMessageTypes>
+            </IgnoredMessagesData>
+          </Setting>
+        </SettingsGroup>
+      </SettingsBundle>
+    </SettingsBundle>
+  </SettingsBundles>
+  <AnalysisBands>
+    <AnalysisBand MinimumMatchValue="50" />
+    <AnalysisBand MinimumMatchValue="75" />
+    <AnalysisBand MinimumMatchValue="85" />
+    <AnalysisBand MinimumMatchValue="95" />
+  </AnalysisBands>
+  <ManualTaskTemplates />
+  <Users>
+    <User UserId="APOSTROPH\ASA" FullName="Arben Sabani" Description="" Email="arben.sabani@apostrophgroup.ch" PhoneNumber="" EmailType="Smtp" />
+  </Users>
+  <CascadeItem OverrideParent="true" StopSearchingWhenResultsFound="false" />
+  <GeneralProjectInfo IsInPlace="true" IsImported="false" Name="example.xml_en-US_de-DE" CreatedAt="2025-01-31T19:47:23.5567753Z" StartedAt="2025-01-31T19:47:23.5637607Z" Status="Started" CreatedBy="APOSTROPH\ASA" />
+  <SourceLanguageCode>en-US</SourceLanguageCode>
+  <ProjectFiles>
+    <ProjectFile Guid="5dc98aa5-8971-44e9-97bc-9b4bf5640bc1" Path="" Role="Translatable" Name="example.xml" ParentProjectFileGuid="00000000-0000-0000-0000-000000000000" FilterDefinitionId="XML: Any v 2.0.0.0">
+      <SpecificTargetLanguages />
+      <LanguageFiles>
+        <LanguageFile Guid="717a9fef-bc1d-4558-b1a9-ef9e0a0efba9" SettingsBundleGuid="aa392712-2da4-4ae4-a3fe-ed9876f38294" LanguageCode="en-US">
+          <FileVersions>
+            <FileVersion Guid="ab021e4a-0abd-496c-a17a-de723c964498" VersionNumber="1" Size="1066" FileName="example.xml" PhysicalPath="example.xml" CreatedBy="APOSTROPH\ASA" CreatedAt="2025-01-31T19:47:23.5637607Z" FileTimeStamp="2025-01-31T19:30:29.4451701Z" IsAutoUpload="false" />
+          </FileVersions>
+          <ChildFiles />
+        </LanguageFile>
+        <LanguageFile Guid="8ea32842-c82c-4601-a1f1-a562b162244b" SettingsBundleGuid="1903af60-34f0-45b3-b79d-1a326595e62f" LanguageCode="de-DE">
+          <FileVersions>
+            <FileVersion Guid="6130e7ce-2889-4357-9608-3120468734d5" VersionNumber="2" Size="1066" FileName="example.xml" PhysicalPath="example.xml" CreatedBy="APOSTROPH\ASA" CreatedAt="2025-01-31T19:47:23.5667585Z" FileTimeStamp="2025-01-31T19:30:29.4451701Z" IsAutoUpload="false" />
+          </FileVersions>
+          <ConfirmationStatistics Status="None">
+            <Unspecified Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            <Draft Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            <Translated Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            <RejectedTranslation Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            <ApprovedTranslation Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            <RejectedSignOff Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            <ApprovedSignOff Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+          </ConfirmationStatistics>
+          <ChildFiles />
+        </LanguageFile>
+      </LanguageFiles>
+      <PreviousBilingualFiles />
+    </ProjectFile>
+  </ProjectFiles>
+  <Tasks />
+</Project>

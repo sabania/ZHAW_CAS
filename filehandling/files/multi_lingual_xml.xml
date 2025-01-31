@@ -2,12 +2,12 @@
 <document>
     <!-- Segment 1 - Hello World -->
     <segment id="1" lang="en" translate="yes">
-        <text>Hello, world!</text>
+        <text>Hello, world! arben.sabani@gmail.com</text>
         <metadata>
             <author>John Doe</author>
             <timestamp>2025-01-31T12:00:00Z</timestamp>
         </metadata>
-        <source>System Generated</source>
+        <source>System Generated arben.sabani@gmail.com</source>
     </segment>
 
     <segment id="1" lang="de" translate="no">
