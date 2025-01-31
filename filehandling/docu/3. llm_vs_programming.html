@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Traditionelle Programmierung vs. Große Sprachmodelle (LLMs)</title>
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-tertiary: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, Arial, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            padding-bottom: 100px;
+        }
+
+        .slide {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+            background: var(--bg-secondary);
+            padding: 3rem;
+            border-radius: 1rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+            min-height: 70vh;
+        }
+
+        .slide.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin: 1.5rem 0 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+        }
+
+        ul,
+        ol {
+            margin: 1rem 0 1rem 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin-bottom: 1rem;
+        }
+
+        strong {
+            color: var(--text-primary);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--bg-tertiary);
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 1rem;
+            text-align: left;
+            border: 1px solid var(--bg-primary);
+        }
+
+        th {
+            background: var(--bg-primary);
+            color: var(--accent);
+        }
+
+        pre {
+            background: var(--bg-tertiary);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+            color: var(--text-secondary);
+        }
+
+        code {
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+        }
+
+        blockquote {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-tertiary);
+            padding: 1rem;
+            border-radius: 2rem;
+            display: flex;
+            gap: 0.5rem;
+            z-index: 100;
+            box-shadow: var(--card-shadow);
+        }
+
+        .nav-button {
+            background: var(--bg-primary);
+            border: none;
+            color: var(--text-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .nav-button:hover:not(:disabled) {
+            background: var(--accent);
+        }
+
+        .nav-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .current-slide {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--bg-tertiary);
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        em {
+            color: var(--warning);
+            font-style: normal;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .slide {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            .navigation {
+                padding: 0.75rem;
+            }
+
+            .nav-button {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="current-slide" id="slideCount"></div>
+
+    <div class="container">
+        <!-- Slide 1 -->
+        <div class="slide active" id="slide1">
+            <h1>Traditionelle Programmierung<br>vs.<br>Große Sprachmodelle (LLMs)</h1>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide" id="slide2">
+            <h2>1. Was ist traditionelle Programmierung?</h2>
+            <h3>Definition</h3>
+            <p>Traditionelle Programmierung bedeutet, dass ein Mensch einem Computer Schritt für Schritt genaue
+                Anweisungen gibt, um ein bestimmtes Problem zu lösen oder eine Aufgabe auszuführen. Diese Anweisungen
+                werden in Programmiersprachen wie Python, Java oder C++ geschrieben.</p>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide" id="slide3">
+            <h2>Merkmale der traditionellen Programmierung</h2>
+            <h3>1. Explizite Anweisungen</h3>
+            <p>Der Programmierer definiert genau, was der Computer tun soll.</p>
+            <div class="example-box">
+                <h4>Beispiele:</h4>
+                <ul>
+                    <li>"Öffne die Datei 'bericht.txt'"</li>
+                    <li>"Wenn der Nutzer über 18 ist, zeige den Inhalt an"</li>
+                    <li>"Speichere den neuen Text in Zeile 5"</li>
+                    <li>"Multipliziere Zahl A mit Zahl B und zeige das Ergebnis"</li>
+                </ul>
+            </div>
+
+            <h3>2. Deterministisches Verhalten</h3>
+            <p>Bei gleichen Eingaben liefert das Programm immer die gleichen Ausgaben.</p>
+            <div class="example-box">
+                <h4>Beispiele:</h4>
+                <ul>
+                    <li>Taschenrechner: 2 + 2 = immer 4</li>
+                    <li>Login: Richtiges Passwort = immer Zugang gewährt</li>
+                    <li>Sortieralgorithmus: [3,1,2] wird immer zu [1,2,3]</li>
+                    <li>Währungsrechner: 100€ = immer gleicher Betrag in USD bei gleichem Kurs</li>
+                </ul>
+            </div>
+
+            <h3>3. Vollständige Kontrolle</h3>
+            <p>Der Programmierer hat volle Kontrolle über jeden Aspekt des Programms.</p>
+            <div class="example-box">
+                <h4>Beispiele:</h4>
+                <ul>
+                    <li>Genau festlegen, wann eine Datei gespeichert wird</li>
+                    <li>Exakt definieren, welche Fehlermeldung bei welchem Problem erscheint</li>
+                    <li>Präzise bestimmen, wie Daten formatiert und angezeigt werden</li>
+                    <li>Exakt kontrollieren, wann und wie das Programm auf Nutzereingaben reagiert</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- Die vorherigen Style-Definitionen bleiben gleich, dann folgen alle Slides: -->
+
+        <div class="slide" id="slide4">
+            <h3>Beispiel</h3>
+            <p>Buchstaben zählen: Code vs. LLM only</p>
+            <pre><code><a style="color:white; text-decoration: none;" target="_blank" href="https://chatgpt.com/share/679a3002-d380-800b-833b-7eeb887da44a">Wie viele a sind im text hier (ohne python zu verwenden): </br>Dieser Chat erscheint nicht im Verlauf, verwendet oder erstellt keine Erinnerungen </br>und wird nicht zum Trainieren unserer Modelle verwendet. </br>Aus Sicherheitsgründen bewahren wir eine Kopie bis zu 30 Tage auf.</a></code></pre>
+        </div>
+
+        <div class="slide" id="slide5">
+            <h2>2. Was sind große Sprachmodelle (LLMs)?</h2>
+            <h3>Definition</h3>
+            <p>LLMs sind künstliche Intelligenzmodelle, die darauf trainiert wurden, menschliche Sprache zu verstehen
+                und zu erzeugen. Sie basieren auf neuronalen Netzen und werden mit enormen Textmengen trainiert.</p>
+        </div>
+
+        <div class="slide" id="slide6">
+            <h3>Merkmale von LLMs</h3>
+            <ul>
+                <li><strong>Sprachverständnis:</strong> Sie können natürliche Sprache interpretieren und darauf
+                    reagieren.</li>
+                <li><strong>Probabilistisches Verhalten:</strong> Antworten basieren auf Wahrscheinlichkeiten und
+                    Mustern aus den Trainingsdaten.</li>
+                <li><strong>Generierung von Inhalten:</strong> Sie können Texte schreiben, Fragen beantworten und sogar
+                    kreative Inhalte erzeugen.</li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide7">
+            <h3>Beispiel</h3>
+            <p>Wenn Sie ein LLM fragen: <em>"Was ist die Hauptstadt von Frankreich?"</em>, versteht es die Frage und
+                antwortet mit <strong>"Paris"</strong>.</p>
+        </div>
+
+        <div class="slide" id="slide8">
+            <h2>3. Hauptunterschiede zwischen traditioneller Programmierung und LLMs</h2>
+            <table>
+                <tr>
+                    <th>Merkmal</th>
+                    <th>Traditionelle Programmierung</th>
+                    <th>LLMs</th>
+                </tr>
+                <tr>
+                    <td><strong>Anweisungen</strong></td>
+                    <td>Exakte, vom Programmierer definierte Schritte</td>
+                    <td>Lernen aus Daten, erzeugen Antworten basierend auf Mustern</td>
+                </tr>
+                <tr>
+                    <td><strong>Flexibilität</strong></td>
+                    <td>Gering – folgt strikt den geschriebenen Anweisungen</td>
+                    <td>Hoch – kann auf vielfältige Eingaben reagieren</td>
+                </tr>
+                <tr>
+                    <td><strong>Verständnis</strong></td>
+                    <td>Verarbeitet Daten strikt nach Programmcode</td>
+                    <td>Versteht und interpretiert natürliche Sprache</td>
+                </tr>
+                <tr>
+                    <td><strong>Vorhersagbarkeit</strong></td>
+                    <td>Verhalten ist vorhersehbar und reproduzierbar</td>
+                    <td>Ergebnisse können variieren, nicht immer vorhersehbar</td>
+                </tr>
+                <tr>
+                    <td><strong>Anwendungsbereiche</strong></td>
+                    <td>Mathematische Berechnungen, Datenverarbeitung, Steuerung von Systemen</td>
+                    <td>Chatbots, Übersetzungen, Textgenerierung, Sprachassistenten</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="slide" id="slide9">
+            <h2>4. Wann sollte welche Technologie eingesetzt werden?</h2>
+            <h3>Traditionelle Programmierung einsetzen, wenn:</h3>
+            <ul>
+                <li><strong>Klare und definierte Aufgaben</strong> vorliegen, die genaue Anweisungen erfordern.</li>
+                <li><strong>Präzision und Kontrolle</strong> notwendig sind.</li>
+                <li>Sie <strong>mathematische Berechnungen</strong>, <strong>Algorithmusimplementierungen</strong> oder
+                    <strong>Hardwaresteuerungen</strong> durchführen.
+                </li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide10">
+            <h3>LLMs einsetzen, wenn:</h3>
+            <ul>
+                <li><strong>Natürliche Sprachverarbeitung</strong> benötigt wird.</li>
+                <li>Sie mit <strong>unstrukturierten oder variablen Daten</strong> arbeiten.</li>
+                <li><strong>Flexibilität</strong> bei der Interpretation von Eingaben wichtig ist.</li>
+                <li>Aufgaben wie <strong>Textgenerierung</strong>, <strong>Zusammenfassungen</strong>,
+                    <strong>Übersetzungen</strong> oder <strong>Beantwortung von Fragen</strong> anstehen.
+                </li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide11">
+            <h2>5. Einfache Analogien zur Veranschaulichung</h2>
+            <blockquote>
+                <strong>Traditionelle Programmierung ist wie ein Kochrezept schreiben:</strong><br>
+                Sie geben genaue Mengen und Schritte an, damit das Gericht immer gleich gelingt.
+            </blockquote>
+            <blockquote>
+                <strong>Ein LLM ist wie ein erfahrener Koch:</strong><br>
+                Sie nennen ihm die Zutaten und er kreiert daraus ein passendes Gericht, eventuell jedes Mal mit einer
+                kleinen Variation.
+            </blockquote>
+        </div>
+
+        <div class="slide" id="slide12">
+            <h2>6. Wie gibt man Anweisungen an beide?</h2>
+            <h3>An den Computer (traditionelle Programmierung):</h3>
+            <pre><code>if (Temperatur > 30) {
+    starteKlimaanlage();
+}</code></pre>
+            <h3>An ein LLM:</h3>
+            <p><em>"Wenn es draußen heiß ist, wie kann ich mein Haus kühlen?"</em></p>
+        </div>
+
+        <div class="slide" id="slide13">
+            <h2>7. Zusammenfassung und Gefühl für die Technologien</h2>
+            <ul>
+                <li><strong>Kontrolle vs. Flexibilität:</strong> Mit traditioneller Programmierung haben Sie die volle
+                    Kontrolle, aber weniger Flexibilität. Mit LLMs haben Sie weniger Kontrolle über die genauen
+                    Schritte, aber mehr Flexibilität in der Anwendung.</li>
+                <li><strong>Vorhersehbarkeit vs. Kreativität:</strong> Traditionelle Programme sind vorhersehbar. LLMs
+                    können kreative oder unerwartete Antworten liefern.</li>
+                <li><strong>Anwendungsgebiete verstehen:</strong> Erkennen Sie, dass beide Technologien ihre Stärken
+                    haben und oft <strong>gemeinsam</strong> eingesetzt werden können, um komplexe Probleme zu lösen.
+                </li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide14">
+            <h2>8. Schlusswort</h2>
+            <p>Indem Sie diese Unterschiede und Anwendungsszenarien verstehen, können Sie besser entscheiden, wann
+                welche Technologie eingesetzt werden sollte. Denken Sie daran, dass traditionelle Programmierung und
+                LLMs Werkzeuge sind, die je nach Aufgabe ausgewählt werden sollten – ähnlich wie ein Handwerker
+                verschiedene Werkzeuge für unterschiedliche Arbeiten verwendet.</p>
+        </div>
+
+    </div>
+
+    <div class="navigation">
+        <button class="nav-button" onclick="previousSlide()" id="prevBtn">Zurück</button>
+        <button class="nav-button" onclick="nextSlide()" id="nextBtn">Weiter</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                }
+            });
+
+            // Update progress bar
+            const progress = ((currentSlide + 1) / slides.length) * 100;
+            document.getElementById('progressBar').style.width = `${progress}%`;
+
+            // Update slide counter
+            document.getElementById('slideCount').textContent =
+                `Folie ${currentSlide + 1} von ${slides.length}`;
+
+            // Update button states
+            document.getElementById('prevBtn').disabled = currentSlide === 0;
+            document.getElementById('nextBtn').disabled = currentSlide === slides.length - 1;
+        }
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                updateSlide();
+            }
+        }
+
+        function previousSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlide();
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') previousSlide();
+        });
+
+        // Initialize
+        updateSlide();
+    </script>
+</body>
+
+</html>

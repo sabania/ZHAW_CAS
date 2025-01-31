@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <segment lang="en">
+        <text>Hello, world!</text>
+    </segment>
+    <segment lang="es">
+        <text>¡Hola, mundo!</text>
+    </segment>
+    <segment lang="fr">
+        <text>Bonjour, le monde!</text>
+    </segment>
+    <segment lang="de">
+        <text>Hallo, Welt!</text>
+    </segment>
+    <segment lang="zh">
+        <text>你好，世界！</text>
+    </segment>
+</document>

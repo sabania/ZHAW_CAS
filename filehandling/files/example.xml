@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- create multilingual xml -->
+<root>
+    <segment lang="en">Hello</segment>
+    <segment lang="de">Hallo</segment>
+</root>

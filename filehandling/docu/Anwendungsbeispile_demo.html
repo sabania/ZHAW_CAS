@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KI-Anwendungen in der Übersetzungsvorbereitung</title>
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-tertiary: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --demo: #ec4899;
+            --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+
+        .slide {
+            display: none;
+            padding: 60px 40px;
+            min-height: 80vh;
+            box-sizing: border-box;
+            background-color: var(--bg-secondary);
+            box-shadow: var(--card-shadow);
+            border-radius: 15px;
+            margin: 40px auto;
+            max-width: 1000px;
+            position: relative;
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            opacity: 0;
+        }
+
+        .slide.active {
+            display: block;
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            color: var(--heading);
+            line-height: 1.4;
+        }
+
+        h2 {
+            color: var(--accent);
+            margin-bottom: 25px;
+            font-size: 2em;
+        }
+
+        h3 {
+            color: var(--success);
+            margin-top: 25px;
+            font-size: 1.5em;
+        }
+
+        .task-card {
+            background: var(--bg-tertiary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--accent);
+        }
+
+        .demo-note {
+            background: var(--bg-tertiary);
+            color: var(--demo);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+            margin-top: 0.5rem;
+            display: inline-block;
+        }
+
+        .example {
+            background: var(--bg-tertiary);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 0.5rem 0;
+            font-family: monospace;
+            color: var(--text-secondary);
+        }
+
+        .tool-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .tool-item {
+            background: var(--bg-tertiary);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--success);
+        }
+
+        .live-demo {
+            color: var(--demo);
+            font-weight: bold;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            width: 100%;
+            text-align: center;
+            z-index: 1000;
+            padding: 10px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-button {
+            background-color: var(--accent);
+            color: var(--text-primary);
+            border: none;
+            padding: 15px 30px;
+            margin: 0 15px;
+            cursor: pointer;
+            border-radius: 30px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-button:hover:not(:disabled) {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .nav-button:disabled {
+            background-color: var(--bg-tertiary);
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .slide-counter {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--bg-tertiary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .keyboard-hint {
+            position: fixed;
+            bottom: 90px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-tertiary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="slide-counter" id="slideCounter">Folie 1 von 5</div>
+
+    <!-- Slide 1: Introduction -->
+    <div class="slide active" id="slide1">
+        <h1>KI-gestützte Dateivorbereitung für Übersetzungsprojekte</h1>
+        <h3>Praktische Anwendungen und Live-Demonstrationen</h3>
+    </div>
+
+    <!-- Slide 2: Sensitive Data Handling -->
+    <div class="slide" id="slide2">
+        <h2>Sensible Daten und Termextraktion</h2>
+
+        <div class="task-card">
+            <h3>Sensible Daten Management</h3>
+            <ul>
+                <li>Automatische Erkennung von personenbezogenen Daten
+                    <div class="example">Namen, E-Mails, Telefonnummern, Adressen</div>
+                </li>
+                <li>Platzhalter-System für sensible Informationen
+                    <div class="example">[[NAME_1]], [[EMAIL_1]], [[PHONE_1]]</div>
+                </li>
+                <li>CSV-Export für Wiedereinfügung
+                    <div class="example">ID, Original, Platzhalter</div>
+                </li>
+            </ul>
+            <span class="demo-note">🔴 Live Demo: Automatische Erkennung und Ersetzung in Word-Dokumenten</span>
+        </div>
+    </div>
+    <div class="slide" id="slide3">
+        <div class="task-card">
+            <h3>Termextraktion aus PDFs</h3>
+            <ul>
+                <li>Häufigkeitsanalyse mit Code Interpreter</li>
+                <li>Excel VBA-Add-in Integration</li>
+                <li>Automatische Glossar-Erstellung</li>
+            </ul>
+            <span class="demo-note">🔴 Live Demo: PDF-Analyse mit GPT-4</span>
+        </div>
+    </div>
+
+    <!-- Slide 3: Document Processing -->
+    <div class="slide" id="slide4">
+        <h2>Dokumentenverarbeitung und OCR</h2>
+
+        <div class="task-card">
+            <h3>PowerPoint-Bildextraktion</h3>
+            <ul>
+                <li>Automatische Bildextraktion
+                    <div class="example">python pptx-image-extractor.py presentation.pptx</div>
+                </li>
+                <li>OCR für eingebettete Texte
+                    <div class="example">Tesseract OCR + GPT-4 Korrektur</div>
+                </li>
+                <li>Textextraktion aus Diagrammen
+                    <div class="example">Automatische Erkennung von Beschriftungen und Legenden</div>
+                </li>
+            </ul>
+            <span class="demo-note">🔴 Live Demo: Bildextraktion und OCR</span>
+        </div>
+    </div>
+    <div class="slide" id="slide5">
+        <div class="task-card">
+            <h3>XML/JSON Verarbeitung</h3>
+            <ul>
+                <li>Element-Kopierung mit Quellerhaltung</li>
+                <li>XPath für SDL-Dateitypen</li>
+                <li>Konvertierung in lesbare Formate</li>
+            </ul>
+            <span class="demo-note">🔴 Live Demo: XML-Transformation</span>
+        </div>
+    </div>
+
+    <!-- Slide 4: File Management -->
+    <div class="slide" id="slide6">
+        <h2>Dateimanagement und Automatisierung</h2>
+
+        <div class="task-card">
+            <h3>PDF-Operations</h3>
+            <ul>
+                <li>Split & Merge Funktionen
+                    <div class="example">PyPDF2 für automatisierte PDF-Manipulation</div>
+                </li>
+                <li>Batch-Konvertierung
+                    <div class="example">Word → PDF mit PowerShell/Python</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="slide" id="slide7">
+        <div class="task-card">
+            <h3>Dateiorganisation</h3>
+            <ul>
+                <li>Metadaten-basierte Sortierung
+                    <div class="example">Nach Autor, Datum, Projektcode sortieren</div>
+                </li>
+                <li>Batch-Metadaten-Entfernung
+                    <div class="example">Vertrauliche Informationen entfernen</div>
+                </li>
+                <li>Automatische Archivierung
+                    <div class="example">Nach Projektabschluss archivieren</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 5: Automation Tools -->
+    <div class="slide" id="slide8">
+        <h2>Automatisierungstools und Regex</h2>
+
+        <div class="task-card">
+            <h3>Windows Task Scheduler Integration</h3>
+            <ul>
+                <li>Automatische Backup-Erstellung</li>
+                <li>Regelmäßige Dateiorganisation</li>
+                <li>Nächtliche Batch-Verarbeitung</li>
+            </ul>
+        </div>
+    </div>
+    <div class="slide" id="slide9">
+        <div class="task-card">
+            <h3>Regex für Qualitätskontrolle</h3>
+            <ul>
+                <li>SDL Quality Checker Integration
+                    <div class="example">Konsistenzprüfung von Zahlen und Einheiten</div>
+                </li>
+                <li>Benutzerdefinierte Regex-Muster
+                    <div class="example">
+                        - Produktcodes: [A-Z]{2}\d{4}-\d{2}
+                        - Datumsformate: \d{2}\.\d{2}\.\d{4}
+                        - Versionsnummern: v\d+\.\d+\.\d+
+                    </div>
+                </li>
+                <li>Automatische Korrekturen
+                    <div class="example">Formatierung von Zahlen und Einheiten</div>
+                </li>
+            </ul>
+            <span class="demo-note">🔴 Live Demo: Regex-basierte Qualitätsprüfung</span>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-button" id="prevBtn" onclick="prevSlide()">&#8592; Zurück</button>
+        <button class="nav-button" id="nextBtn" onclick="nextSlide()">Weiter &#8594;</button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 5; // Update this number if you add/remove slides
+
+        function showSlide(n) {
+            // Hide all slides
+            const slides = document.querySelectorAll('.slide');
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+                slide.style.display = 'none';
+            });
+
+            // Show current slide
+            const currentSlideElement = document.getElementById('slide' + n);
+            if (currentSlideElement) {
+                currentSlideElement.classList.add('active');
+                currentSlideElement.style.display = 'block';
+            }
+
+            // Update progress bar
+            const progress = (n / totalSlides) * 100;
+            document.getElementById('progressBar').style.width = `${progress}%`;
+
+            // Update counter
+            document.getElementById('slideCounter').textContent = `Folie ${n} von ${totalSlides}`;
+
+            // Update button states
+            document.getElementById('prevBtn').disabled = n === 1;
+            document.getElementById('nextBtn').disabled = n === totalSlides;
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'ArrowRight') {
+                nextSlide();
+            } else if (event.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+
+        // Touch navigation
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            if (touchEndX < touchStartX - swipeThreshold) {
+                nextSlide(); // Swipe left
+            }
+            if (touchEndX > touchStartX + swipeThreshold) {
+                prevSlide(); // Swipe right
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(1);
+
+            // Hide keyboard hint on mobile devices
+            if ('ontouchstart' in window) {
+                document.querySelector('.keyboard-hint').style.display = 'none';
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            showSlide(currentSlide);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einführung in Code und Code-Interpreter</title>
+    <style>
+        /* Variables */
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-tertiary: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --heading: #60a5fa;
+            --code-bg: #1e293b;
+            --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+
+        .slide {
+            display: none;
+            padding: 60px 40px;
+            min-height: 100vh;
+            box-sizing: border-box;
+            background-color: var(--bg-secondary);
+            box-shadow: var(--card-shadow);
+            border-radius: 15px;
+            margin: 40px auto;
+            max-width: 900px;
+            position: relative;
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            opacity: 0;
+        }
+
+        .active {
+            display: block;
+            transform: scale(1.05);
+            opacity: 1;
+        }
+
+        /* Typography */
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 3em;
+            color: var(--heading);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            color: var(--heading);
+        }
+
+        h3 {
+            color: var(--accent);
+            margin-top: 25px;
+        }
+
+        p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 30px;
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        strong {
+            color: var(--accent);
+        }
+
+        /* Code Blocks */
+        code {
+            background-color: var(--code-bg);
+            padding: 4px 8px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            display: block;
+            white-space: pre-wrap;
+            margin-top: 10px;
+            color: #10b981;
+        }
+
+        .script-container {
+            background-color: var(--bg-tertiary);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+            overflow-x: auto;
+            border-left: 5px solid var(--accent);
+        }
+
+        /* Navigation */
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            width: 100%;
+            text-align: center;
+            z-index: 1000;
+            padding: 10px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-button {
+            background-color: var(--accent);
+            color: var(--text-primary);
+            border: none;
+            padding: 15px 30px;
+            margin: 0 15px;
+            cursor: pointer;
+            border-radius: 30px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-button:hover:not(:disabled) {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-button:disabled {
+            background-color: var(--bg-tertiary);
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+
+        /* Progress Indicator */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .slide-counter {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--bg-tertiary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .slide {
+                padding: 40px 20px;
+                margin: 20px;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .nav-button {
+                padding: 12px 24px;
+                font-size: 16px;
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="slide-counter" id="slideCounter">Folie 1 von 10</div>
+
+    <!-- All slides content here (previously shared) -->
+    <!-- Slide 1: Einführung -->
+<div class="slide active" id="slide1">
+    <h1>Einführung in Code und Code-Interpreter</h1>
+    <p>Verstehen Sie die Grundlagen von Code, die verschiedenen Ebenen der Programmierung und wie moderne Tools wie Code-Interpreter die Art und Weise verändern, wie wir mit Computern interagieren.</p>
+</div>
+
+<!-- Slide 2: Was ist Code? -->
+<div class="slide" id="slide2">
+    <h2>Folie 1: Was ist Code?</h2>
+    <h3>Definition von Code</h3>
+    <p>Eine Reihe von Anweisungen, die einem Computer mitteilen, was er tun soll.</p>
+    <p>Ermöglicht die Kommunikation zwischen Mensch und Maschine.</p>
+
+    <h3>Zweck von Code</h3>
+    <ul>
+        <li>Automatisierung von Aufgaben.</li>
+        <li>Lösung komplexer Probleme durch Rechenleistung.</li>
+    </ul>
+</div>
+
+<!-- Slide 3: Ebenen der Programmierung -->
+<div class="slide" id="slide3">
+    <h2>Folie 2: Ebenen der Programmierung</h2>
+    <h3>Maschinencode (Bits)</h3>
+    <ul>
+        <li>Niedrigste Ebene der Programmierung.</li>
+        <li>Besteht aus Binärzahlen (0 und 1).</li>
+        <li>Direkt vom Prozessor ausführbar.</li>
+    </ul>
+
+    <h3>Assembler</h3>
+    <ul>
+        <li>Eine Ebene über dem Maschinencode.</li>
+        <li>Verwendet mnemonische Codes (z.B. MOV, ADD).</li>
+        <li>Erleichtert das Schreiben von Code gegenüber reinem Binärcode.</li>
+    </ul>
+</div>
+
+<!-- Slide 4: Höhere Programmiersprachen -->
+<div class="slide" id="slide4">
+    <h2>Folie 3: Höhere Programmiersprachen</h2>
+    <h3>Beispiele: Python, Java, C++</h3>
+    <p>Näher an der menschlichen Sprache.</p>
+    <p>Verwenden einer verständlicheren Syntax.</p>
+
+    <h3>Vorteile</h3>
+    <ul>
+        <li>Bessere Lesbarkeit und Wartbarkeit des Codes.</li>
+        <li>Schnellere Entwicklungszeiten.</li>
+        <li>Plattformunabhängigkeit durch Verwendung von Compilern und Interpretern.</li>
+    </ul>
+
+    <h3>Beispielskript:</h3>
+    <div class="script-container">
+        <code>
+# Ein einfaches Python-Skript zur Ausgabe von "Hello, World!"
+print("Hello, World!")
+        </code>
+    </div>
+</div>
+
+<!-- Slide 5: Entwicklung zur natürlichen Sprache -->
+<div class="slide" id="slide5">
+    <h2>Folie 4: Entwicklung zur natürlichen Sprache</h2>
+    <h3>Von Code zu natürlicher Sprache</h3>
+    <p>Traditionell mussten Menschen Programmiersprachen erlernen.</p>
+    <p>Ziel: Maschinen sollen Menschen verstehen, nicht umgekehrt.</p>
+
+    <h3>Einführung von KI und LLMs</h3>
+    <ul>
+        <li>LLMs (Large Language Models) wie GPT-4 verstehen natürliche Sprache.</li>
+        <li>Erlauben die Kommunikation mit Computern in Englisch oder anderen Sprachen.</li>
+    </ul>
+</div>
+
+<!-- Slide 6: Englisch als neue Programmiersprache -->
+<div class="slide" id="slide6">
+    <h2>Folie 5: Englisch als neue Programmiersprache</h2>
+    <p>Dank LLMs wird natürliche Sprache zur Schnittstelle.</p>
+    <p>Keine Notwendigkeit, eine Programmiersprache zu erlernen.</p>
+    <p>Anweisungen können in Alltagssprache gegeben werden.</p>
+
+    <h3>Beispiel</h3>
+    <p>Statt <code>print("Hello, World!")</code> schreibt man: „Zeige ‚Hallo Welt' auf dem Bildschirm."</p>
+</div>
+
+<!-- Slide 7: Der Code Interpreter -->
+<div class="slide" id="slide7">
+    <h2>Folie 6: Der Code Interpreter</h2>
+    <h3>Was ist der Code Interpreter?</h3>
+    <p>Ein Tool von OpenAI, das natürliche Sprache in ausführbaren Code umwandelt.</p>
+    <p>Kann Python-Code basierend auf Benutzereingaben generieren und ausführen.</p>
+
+    <h3>Funktionen</h3>
+    <ul>
+        <li>Datenanalyse, Dateiverarbeitung, Automatisierung von Aufgaben.</li>
+        <li>Visualisierung von Daten ohne tiefgehende Programmierkenntnisse.</li>
+    </ul>
+
+    <h3>Beispielskript:</h3>
+    <div class="script-container">
+        <code>
+// Beispiel für die Nutzung von OpenAI's API mit Python
+import openai
+
+openai.api_key = 'DEIN_API_SCHLÜSSEL'
+
+response = openai.ChatCompletion.create(
+  model="gpt-4",
+  messages=[
+        {"role": "system", "content": "Du bist ein hilfreicher Assistent."},
+        {"role": "user", "content": "Erkläre den Unterschied zwischen traditioneller Software und LLMs."}
+    ]
+)
+
+print(response['choices'][0]['message']['content'])
+        </code>
+    </div>
+</div>
+
+<!-- Slide 8: Vorteile dieser Entwicklung -->
+<div class="slide" id="slide8">
+    <h2>Folie 7: Vorteile dieser Entwicklung</h2>
+    <h3>Zugänglichkeit</h3>
+    <ul>
+        <li>Programmierung wird für mehr Menschen zugänglich.</li>
+        <li>Senkt die Eintrittsbarrieren für technische Tätigkeiten.</li>
+    </ul>
+
+    <h3>Produktivität</h3>
+    <ul>
+        <li>Schnellere Umsetzung von Ideen.</li>
+        <li>Fokus auf Problemlösung statt auf Syntax.</li>
+    </ul>
+</div>
+
+<!-- Slide 9: Herausforderungen und Überlegungen -->
+<div class="slide" id="slide9">
+    <h2>Folie 8: Herausforderungen und Überlegungen</h2>
+    <h3>Genauigkeit und Kontrolle</h3>
+    <ul>
+        <li>Vertrauen in die korrekte Umsetzung der Anweisungen.</li>
+        <li>Notwendigkeit, die Ergebnisse zu überprüfen.</li>
+    </ul>
+
+    <h3>Sicherheitsaspekte</h3>
+    <ul>
+        <li>Risiken bei der Ausführung von generiertem Code.</li>
+        <li>Bedeutung von Überwachung und Kontrolle.</li>
+    </ul>
+
+    <h3>Rolle von Entwicklern</h3>
+    <ul>
+        <li>Wandel von der Code-Schreiberrolle zur Überwachungs- und Validierungsrolle.</li>
+        <li>Fokus auf komplexere Probleme und Architektur.</li>
+    </ul>
+</div>
+
+<!-- Slide 10: Zusammenfassung -->
+<div class="slide" id="slide10">
+    <h2>Folie 9: Zusammenfassung</h2>
+    <h3>Evolution der Programmierung</h3>
+    <ul>
+        <li>Von Bits und Bytes zur natürlichen Sprache.</li>
+    </ul>
+
+    <h3>Bedeutung von LLMs</h3>
+    <ul>
+        <li>Ermöglichen eine neue Art der Interaktion mit Computern.</li>
+    </ul>
+
+    <h3>Zukunftsaussichten</h3>
+    <ul>
+        <li>Weiterentwicklung von KI-Tools.</li>
+        <li>Mögliche Veränderungen in Arbeitsprozessen und -rollen.</li>
+    </ul>
+</div>
+
+    <div class="navigation">
+        <button class="nav-button" id="prevBtn" onclick="prevSlide()">&#8592; Zurück</button>
+        <button class="nav-button" id="nextBtn" onclick="nextSlide()">Weiter &#8594;</button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 10;
+
+        function showSlide(n) {
+            // Hide all slides
+            for (let i = 1; i <= totalSlides; i++) {
+                document.getElementById('slide' + i).classList.remove('active');
+            }
+            // Show current slide
+            document.getElementById('slide' + n).classList.add('active');
+            
+            // Update progress bar
+            const progress = (n / totalSlides) * 100;
+            document.getElementById('progressBar').style.width = `${progress}%`;
+            
+            // Update counter
+            document.getElementById('slideCounter').textContent = `Folie ${n} von ${totalSlides}`;
+
+            // Update button states
+            document.getElementById('prevBtn').disabled = n === 1;
+            document.getElementById('nextBtn').disabled = n === totalSlides;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowRight') {
+                nextSlide();
+            } else if (event.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+
+        // Initialize
+        showSlide(1);
+    </script>
+</body>
+</html>

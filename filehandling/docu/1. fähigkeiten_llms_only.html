@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Die Eigenständigen Fähigkeiten von Large Language Models (LLMs)</title>
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-tertiary: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --heading: #60a5fa;
+            --code-bg: #1e293b;
+            --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding-bottom: 100px;
+        }
+
+        .slide {
+            display: none;
+            padding: 60px 40px;
+            min-height: 80vh;
+            box-sizing: border-box;
+            background-color: var(--bg-secondary);
+            box-shadow: var(--card-shadow);
+            border-radius: 15px;
+            margin: 40px auto;
+            max-width: 1000px;
+            position: relative;
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            opacity: 0;
+        }
+
+        .slide.active {
+            display: block;
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            color: var(--heading);
+            line-height: 1.4;
+        }
+
+        h2 {
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            color: var(--heading);
+            font-size: 2em;
+        }
+
+        h3 {
+            color: var(--accent);
+            margin-top: 25px;
+            font-size: 1.5em;
+        }
+
+        p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin-bottom: 12px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            width: 100%;
+            text-align: center;
+            z-index: 1000;
+            padding: 10px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-button {
+            background-color: var(--accent);
+            color: var(--text-primary);
+            border: none;
+            padding: 15px 30px;
+            margin: 0 15px;
+            cursor: pointer;
+            border-radius: 30px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-button:hover:not(:disabled) {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .nav-button:disabled {
+            background-color: var(--bg-tertiary);
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .slide-counter {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--bg-tertiary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                padding: 30px 20px;
+                margin: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .nav-button {
+                padding: 12px 24px;
+                font-size: 16px;
+                margin: 0 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="slide-counter" id="slideCounter">Folie 1 von 13</div>
+
+    <!-- Slide 1: Titel -->
+    <div class="slide active" id="slide1">
+        <h1>Die Eigenständigen Fähigkeiten von Large Language Models (LLMs) und Missverständnisse darüber</h1>
+        <h3>Was LLMs alleine leisten können und wo andere Komponenten ins Spiel kommen</h3>
+    </div>
+
+    <!-- Slide 2: Einführung -->
+    <div class="slide" id="slide2">
+        <h2>Einführung</h2>
+        <p>Ziel der Präsentation: Aufklärung darüber, was LLMs autonom leisten können und warum der Eindruck entsteht, dass sie mehr können</p>
+        <h3>Agenda</h3>
+        <ul>
+            <li>Definition von LLMs</li>
+            <li>Autonome Fähigkeiten von LLMs</li>
+            <li>Missverständnisse und die Rolle zusätzlicher Komponenten</li>
+            <li>Beispiele für integrierte Systeme</li>
+            <li>Wichtige Erkenntnisse und Fazit</li>
+        </ul>
+    </div>
+
+    <!-- Continue after slide 2 -->
+
+<!-- Slide 3: Was sind LLMs? -->
+<div class="slide" id="slide3">
+    <h2>Was sind LLMs?</h2>
+    <h3>Definition</h3>
+    <p>Große Sprachmodelle (Large Language Models) sind KI-Systeme, die mithilfe von Deep Learning auf umfangreichen Textdaten trainiert wurden, um menschliche Sprache zu verstehen und zu generieren.</p>
+    <h3>Bekannte Beispiele:</h3>
+    <ul>
+        <li>GPT-4</li>
+        <li>BERT</li>
+        <li>T5</li>
+    </ul>
+    <h3>Grundprinzip:</h3>
+    <p>Nutzung von neuronalen Netzen zur Mustererkennung und Sprachverarbeitung</p>
+</div>
+
+<!-- Slide 4: Autonome Fähigkeiten -->
+<div class="slide" id="slide4">
+    <h2>Autonome Fähigkeiten von LLMs</h2>
+    <h3>Textgenerierung</h3>
+    <ul>
+        <li>Erstellen von kohärentem und relevantem Text basierend auf Eingaben</li>
+        <li>Beispiele: Artikel, Blogposts, E-Mails, Geschichten</li>
+    </ul>
+    <h3>Sprachverständnis und -interpretation</h3>
+    <ul>
+        <li>Beantwortung von Fragen, Erklären von Konzepten, Führen von Gesprächen</li>
+    </ul>
+    <h3>Textzusammenfassung</h3>
+    <ul>
+        <li>Reduzierung langer Texte auf wesentliche Informationen</li>
+    </ul>
+    <h3>Übersetzung</h3>
+    <ul>
+        <li>Übersetzen von Texten zwischen verschiedenen Sprachen</li>
+    </ul>
+    <h3>Kreative Inhalte erzeugen</h3>
+    <ul>
+        <li>Schreiben von Gedichten, Geschichten, Dialogen</li>
+    </ul>
+</div>
+
+<!-- Slide 5: Missverständnisse -->
+<div class="slide" id="slide5">
+    <h2>Missverständnisse – Der Eindruck, LLMs könnten alles</h2>
+    <h3>Allgemeine Wahrnehmung</h3>
+    <p>LLMs werden oft als Alleskönner dargestellt, die direkt mit dem Computer interagieren können</p>
+    <h3>Beispiele für Missverständnisse</h3>
+    <ul>
+        <li>Öffnen von Dateien</li>
+        <li>Ausführen von Programmen oder Skripten</li>
+        <li>Direkte Manipulation von Systemressourcen</li>
+    </ul>
+</div>
+
+<!-- Slide 6: Warum dieser Eindruck? -->
+<div class="slide" id="slide6">
+    <h2>Warum entsteht dieser Eindruck?</h2>
+    <h3>Marketing und Medien</h3>
+    <ul>
+        <li>Vereinfachte Darstellung von KI-Fähigkeiten</li>
+        <li>Nutzung des Begriffs "KI" als Sammelbegriff für komplexe Systeme</li>
+    </ul>
+    <h3>Integrierte Systeme</h3>
+    <ul>
+        <li>Oft werden LLMs in Anwendungen eingebettet, die zusätzliche Funktionen bereitstellen</li>
+    </ul>
+    <h3>Benutzererfahrung</h3>
+    <ul>
+        <li>Nahtlose Integration führt dazu, dass Nutzer die zugrunde liegenden Komponenten nicht wahrnehmen</li>
+    </ul>
+</div>
+
+<!-- Slide 7: Zusätzliche Komponenten -->
+<div class="slide" id="slide7">
+    <h2>Die Rolle zusätzlicher Komponenten</h2>
+    <h3>Traditionelle Programmierung</h3>
+    <ul>
+        <li>Steuerung von Computeraktionen wie Dateioperationen, Codeausführung, Systeminteraktionen</li>
+    </ul>
+    <h3>APIs und Schnittstellen</h3>
+    <ul>
+        <li>Ermöglichen die Kommunikation zwischen LLMs und anderen Softwarekomponenten</li>
+    </ul>
+    <h3>Beispielarchitektur</h3>
+    <ul>
+        <li>LLM als Sprachverarbeitungseinheit</li>
+        <li>Middleware zur Verarbeitung von Befehlen und Steuerung von Aktionen</li>
+    </ul>
+</div>
+
+<!-- Slide 8: Beispiele für integrierte Systeme -->
+<div class="slide" id="slide8">
+    <h2>Beispiele für integrierte Systeme</h2>
+    <h3>Chatbots mit erweiterten Funktionen</h3>
+    <ul>
+        <li>LLM zur Verarbeitung von Anfragen</li>
+        <li>Backend-Services zum Öffnen von Dateien oder Ausführen von Aktionen</li>
+    </ul>
+    <h3>Virtuelle Assistenten</h3>
+    <ul>
+        <li>Sprachverständnis durch LLM</li>
+        <li>Integration mit Kalender, E-Mail und anderen Anwendungen durch zusätzliche Komponenten</li>
+    </ul>
+    <h3>Automatisierte Arbeitsabläufe</h3>
+    <ul>
+        <li>LLM zur Erstellung von Skripten</li>
+        <li>Skript-Runner zum Ausführen der generierten Skripte</li>
+    </ul>
+</div>
+
+<!-- Slide 9: Demonstration -->
+<div class="slide" id="slide9">
+    <h2>Demonstration – LLM allein vs. Integriertes System</h2>
+    <h3>LLM allein</h3>
+    <ul>
+        <li>Eingabe: „Schreibe einen Bericht über erneuerbare Energien."</li>
+        <li>Ausgabe: Generierter Textbericht</li>
+    </ul>
+    <h3>Integriertes System</h3>
+    <ul>
+        <li>Eingabe: „Erstelle und speichere einen Bericht über erneuerbare Energien."</li>
+        <li>Ausgabe: Generierter Text + Automatisches Speichern der Datei durch zusätzliche Software</li>
+    </ul>
+</div>
+
+<!-- Slide 10: Grenzen -->
+<div class="slide" id="slide10">
+    <h2>Grenzen der Eigenständigkeit von LLMs</h2>
+    <h3>Keine direkte Interaktion mit dem Betriebssystem</h3>
+    <ul>
+        <li>LLMs können keine Dateien öffnen, speichern oder Programme ausführen</li>
+    </ul>
+    <h3>Kein echtes Verständnis</h3>
+    <ul>
+        <li>Verarbeitung von Sprache ohne Bewusstsein oder tiefes Verständnis</li>
+    </ul>
+    <h3>Abhängigkeit von Eingaben</h3>
+    <ul>
+        <li>Qualität und Relevanz der Ausgaben basieren auf der Qualität der Eingaben</li>
+    </ul>
+    <h3>Begrenztes Wissen</h3>
+    <ul>
+        <li>Kenntnisstand basiert auf Trainingsdaten bis zum Cutoff-Datum</li>
+    </ul>
+</div>
+
+<!-- Slide 11: Wichtige Erkenntnisse -->
+<div class="slide" id="slide11">
+    <h2>Wichtige Erkenntnisse</h2>
+    <h3>Klarheit über Fähigkeiten</h3>
+    <ul>
+        <li>LLMs sind leistungsstark in der Sprachverarbeitung, aber nicht Alleskönner</li>
+    </ul>
+    <h3>Notwendigkeit zusätzlicher Komponenten</h3>
+    <ul>
+        <li>Für erweiterte Funktionen sind traditionelle Programmierung und zusätzliche Software nötig</li>
+    </ul>
+    <h3>Realistische Erwartungen</h3>
+    <ul>
+        <li>Verständnis der Grenzen hilft, realistische Erwartungen und effektivere Nutzung zu fördern</li>
+    </ul>
+</div>
+
+<!-- Slide 12: Fazit -->
+<div class="slide" id="slide12">
+    <h2>Fazit</h2>
+    <h3>Zusammenfassung</h3>
+    <ul>
+        <li>LLMs bieten beeindruckende Fähigkeiten in der Text- und Sprachverarbeitung</li>
+        <li>Der Eindruck, dass LLMs alles können, entsteht durch die Integration mit anderen Systemen</li>
+        <li>Es ist wichtig, die autonomen Fähigkeiten von LLMs klar von den erweiterten Funktionen durch zusätzliche Komponenten zu trennen</li>
+    </ul>
+    <h3>Schlussgedanken</h3>
+    <p>Ein fundiertes Verständnis der tatsächlichen Fähigkeiten von LLMs ermöglicht eine realistische und effektive Nutzung der Technologie</p>
+</div>
+
+<!-- Slide 13: Fragen und Diskussion -->
+<div class="slide" id="slide13">
+    <h2>Fragen und Diskussion</h2>
+    <h3>Offene Fragerunde</h3>
+    <p>Einladung an das Publikum, Fragen zu stellen</p>
+    <h3>Diskussion</h3>
+    <p>Austausch über eigene Erfahrungen und Wahrnehmungen bezüglich der Fähigkeiten von LLMs</p>
+</div>
+
+    <div class="navigation">
+        <button class="nav-button" id="prevBtn" onclick="prevSlide()">&#8592; Zurück</button>
+        <button class="nav-button" id="nextBtn" onclick="nextSlide()">Weiter &#8594;</button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 13;
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            slides.forEach(slide => slide.classList.remove('active'));
+            document.getElementById('slide' + n).classList.add('active');
+            
+            const progress = (n / totalSlides) * 100;
+            document.getElementById('progressBar').style.width = `${progress}%`;
+            document.getElementById('slideCounter').textContent = `Folie ${n} von ${totalSlides}`;
+            
+            document.getElementById('prevBtn').disabled = n === 1;
+            document.getElementById('nextBtn').disabled = n === totalSlides;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowRight') nextSlide();
+            if (event.key === 'ArrowLeft') prevSlide();
+        });
+
+        showSlide(1);
+    </script>
+</body>
+</html>
