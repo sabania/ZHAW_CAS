@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,7 +59,7 @@
             margin-bottom: 30px;
             font-size: 3em;
             color: var(--heading);
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         h2 {
@@ -171,7 +172,7 @@
             border-radius: 20px;
             color: var(--text-secondary);
             font-size: 14px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         /* Responsive Design */
@@ -193,113 +194,115 @@
         }
     </style>
 </head>
+
 <body>
     <div class="progress-bar" id="progressBar"></div>
     <div class="slide-counter" id="slideCounter">Folie 1 von 10</div>
 
     <!-- All slides content here (previously shared) -->
     <!-- Slide 1: Einführung -->
-<div class="slide active" id="slide1">
-    <h1>Einführung in Code und Code-Interpreter</h1>
-    <p>Verstehen Sie die Grundlagen von Code, die verschiedenen Ebenen der Programmierung und wie moderne Tools wie Code-Interpreter die Art und Weise verändern, wie wir mit Computern interagieren.</p>
-</div>
+    <div class="slide active" id="slide1">
+        <h1>Einführung in Code und Code-Interpreter</h1>
+        <p>Verstehen Sie die Grundlagen von Code, die verschiedenen Ebenen der Programmierung und wie moderne Tools wie
+            Code-Interpreter die Art und Weise verändern, wie wir mit Computern interagieren.</p>
+    </div>
 
-<!-- Slide 2: Was ist Code? -->
-<div class="slide" id="slide2">
-    <h2>Folie 1: Was ist Code?</h2>
-    <h3>Definition von Code</h3>
-    <p>Eine Reihe von Anweisungen, die einem Computer mitteilen, was er tun soll.</p>
-    <p>Ermöglicht die Kommunikation zwischen Mensch und Maschine.</p>
+    <!-- Slide 2: Was ist Code? -->
+    <div class="slide" id="slide2">
+        <h2>Folie 1: Was ist Code?</h2>
+        <h3>Definition von Code</h3>
+        <p>Eine Reihe von Anweisungen, die einem Computer mitteilen, was er tun soll.</p>
+        <p>Ermöglicht die Kommunikation zwischen Mensch und Maschine.</p>
 
-    <h3>Zweck von Code</h3>
-    <ul>
-        <li>Automatisierung von Aufgaben.</li>
-        <li>Lösung komplexer Probleme durch Rechenleistung.</li>
-    </ul>
-</div>
+        <h3>Zweck von Code</h3>
+        <ul>
+            <li>Automatisierung von Aufgaben.</li>
+            <li>Lösung komplexer Probleme durch Rechenleistung.</li>
+        </ul>
+    </div>
 
-<!-- Slide 3: Ebenen der Programmierung -->
-<div class="slide" id="slide3">
-    <h2>Folie 2: Ebenen der Programmierung</h2>
-    <h3>Maschinencode (Bits)</h3>
-    <ul>
-        <li>Niedrigste Ebene der Programmierung.</li>
-        <li>Besteht aus Binärzahlen (0 und 1).</li>
-        <li>Direkt vom Prozessor ausführbar.</li>
-    </ul>
+    <!-- Slide 3: Ebenen der Programmierung -->
+    <div class="slide" id="slide3">
+        <h2>Folie 2: Ebenen der Programmierung</h2>
+        <h3>Maschinencode (Bits)</h3>
+        <ul>
+            <li>Niedrigste Ebene der Programmierung.</li>
+            <li>Besteht aus Binärzahlen (0 und 1).</li>
+            <li>Direkt vom Prozessor ausführbar.</li>
+        </ul>
 
-    <h3>Assembler</h3>
-    <ul>
-        <li>Eine Ebene über dem Maschinencode.</li>
-        <li>Verwendet mnemonische Codes (z.B. MOV, ADD).</li>
-        <li>Erleichtert das Schreiben von Code gegenüber reinem Binärcode.</li>
-    </ul>
-</div>
+        <h3>Assembler</h3>
+        <ul>
+            <li>Eine Ebene über dem Maschinencode.</li>
+            <li>Verwendet mnemonische Codes (z.B. MOV, ADD).</li>
+            <li>Erleichtert das Schreiben von Code gegenüber reinem Binärcode.</li>
+        </ul>
+    </div>
 
-<!-- Slide 4: Höhere Programmiersprachen -->
-<div class="slide" id="slide4">
-    <h2>Folie 3: Höhere Programmiersprachen</h2>
-    <h3>Beispiele: Python, Java, C++</h3>
-    <p>Näher an der menschlichen Sprache.</p>
-    <p>Verwenden einer verständlicheren Syntax.</p>
+    <!-- Slide 4: Höhere Programmiersprachen -->
+    <div class="slide" id="slide4">
+        <h2>Folie 3: Höhere Programmiersprachen</h2>
+        <h3>Beispiele: Python, Java, C++</h3>
+        <p>Näher an der menschlichen Sprache.</p>
+        <p>Verwenden einer verständlicheren Syntax.</p>
 
-    <h3>Vorteile</h3>
-    <ul>
-        <li>Bessere Lesbarkeit und Wartbarkeit des Codes.</li>
-        <li>Schnellere Entwicklungszeiten.</li>
-        <li>Plattformunabhängigkeit durch Verwendung von Compilern und Interpretern.</li>
-    </ul>
+        <h3>Vorteile</h3>
+        <ul>
+            <li>Bessere Lesbarkeit und Wartbarkeit des Codes.</li>
+            <li>Schnellere Entwicklungszeiten.</li>
+            <li>Plattformunabhängigkeit durch Verwendung von Compilern und Interpretern.</li>
+        </ul>
 
-    <h3>Beispielskript:</h3>
-    <div class="script-container">
-        <code>
+        <h3>Beispielskript:</h3>
+        <div class="script-container">
+            <code>
 # Ein einfaches Python-Skript zur Ausgabe von "Hello, World!"
 print("Hello, World!")
         </code>
+        </div>
     </div>
-</div>
 
-<!-- Slide 5: Entwicklung zur natürlichen Sprache -->
-<div class="slide" id="slide5">
-    <h2>Folie 4: Entwicklung zur natürlichen Sprache</h2>
-    <h3>Von Code zu natürlicher Sprache</h3>
-    <p>Traditionell mussten Menschen Programmiersprachen erlernen.</p>
-    <p>Ziel: Maschinen sollen Menschen verstehen, nicht umgekehrt.</p>
+    <!-- Slide 5: Entwicklung zur natürlichen Sprache -->
+    <div class="slide" id="slide5">
+        <h2>Folie 4: Entwicklung zur natürlichen Sprache</h2>
+        <h3>Von Code zu natürlicher Sprache</h3>
+        <p>Traditionell mussten Menschen Programmiersprachen erlernen.</p>
+        <p>Ziel: Maschinen sollen Menschen verstehen, nicht umgekehrt.</p>
 
-    <h3>Einführung von KI und LLMs</h3>
-    <ul>
-        <li>LLMs (Large Language Models) wie GPT-4 verstehen natürliche Sprache.</li>
-        <li>Erlauben die Kommunikation mit Computern in Englisch oder anderen Sprachen.</li>
-    </ul>
-</div>
+        <h3>Einführung von KI und LLMs</h3>
+        <ul>
+            <li>LLMs (Large Language Models) wie GPT-4 verstehen natürliche Sprache.</li>
+            <li>Erlauben die Kommunikation mit Computern in Englisch oder anderen Sprachen.</li>
+        </ul>
+    </div>
 
-<!-- Slide 6: Englisch als neue Programmiersprache -->
-<div class="slide" id="slide6">
-    <h2>Folie 5: Englisch als neue Programmiersprache</h2>
-    <p>Dank LLMs wird natürliche Sprache zur Schnittstelle.</p>
-    <p>Keine Notwendigkeit, eine Programmiersprache zu erlernen.</p>
-    <p>Anweisungen können in Alltagssprache gegeben werden.</p>
+    <!-- Slide 6: Englisch als neue Programmiersprache -->
+    <div class="slide" id="slide6">
+        <h2>Folie 5: Englisch als neue Programmiersprache</h2>
+        <p>Dank LLMs wird natürliche Sprache zur Schnittstelle.</p>
+        <p>"Keine Notwendigkeit"(?), eine Programmiersprache zu erlernen.</p>
+        <p>Anweisungen können in Alltagssprache gegeben werden.</p>
 
-    <h3>Beispiel</h3>
-    <p>Statt <code>print("Hello, World!")</code> schreibt man: „Zeige ‚Hallo Welt' auf dem Bildschirm."</p>
-</div>
+        <h3>Beispiel</h3>
+        <p>Statt <code>print("Hello, World!")</code> schreibt man: „Zeige ‚Hallo Welt' auf dem Bildschirm."</p>
+    </div>
 
-<!-- Slide 7: Der Code Interpreter -->
-<div class="slide" id="slide7">
-    <h2>Folie 6: Der Code Interpreter</h2>
-    <h3>Was ist der Code Interpreter?</h3>
-    <p>Ein Tool von OpenAI, das natürliche Sprache in ausführbaren Code umwandelt.</p>
-    <p>Kann Python-Code basierend auf Benutzereingaben generieren und ausführen.</p>
+    <!-- Slide 7: Der Code Interpreter -->
+    <div class="slide" id="slide7">
+        <h2>Folie 6: Der Code Interpreter</h2>
+        <h3>Was ist der Code Interpreter?</h3>
+        <p>Ein Tool von OpenAI, das natürliche Sprache in ausführbaren Code umwandelt.</p>
+        <p>Kann Python-Code basierend auf Benutzereingaben generieren und ausführen.</p>
 
-    <h3>Funktionen</h3>
-    <ul>
-        <li>Datenanalyse, Dateiverarbeitung, Automatisierung von Aufgaben.</li>
-        <li>Visualisierung von Daten ohne tiefgehende Programmierkenntnisse.</li>
-    </ul>
+        <h3>Funktionen</h3>
+        <ul>
+            <li>Datenanalyse, Dateiverarbeitung, Automatisierung von Aufgaben.</li>
+            <li>Visualisierung von Daten ohne tiefgehende Programmierkenntnisse.</li>
+        </ul>
 
-    <h3>Beispielskript:</h3>
-    <div class="script-container">
-        <code>
+        <h3>Beispielskript:</h3>
+        <div class="script-container">
+            <code>
 // Beispiel für die Nutzung von OpenAI's API mit Python
 import openai
 
@@ -315,66 +318,66 @@ response = openai.ChatCompletion.create(
 
 print(response['choices'][0]['message']['content'])
         </code>
+        </div>
     </div>
-</div>
 
-<!-- Slide 8: Vorteile dieser Entwicklung -->
-<div class="slide" id="slide8">
-    <h2>Folie 7: Vorteile dieser Entwicklung</h2>
-    <h3>Zugänglichkeit</h3>
-    <ul>
-        <li>Programmierung wird für mehr Menschen zugänglich.</li>
-        <li>Senkt die Eintrittsbarrieren für technische Tätigkeiten.</li>
-    </ul>
+    <!-- Slide 8: Vorteile dieser Entwicklung -->
+    <div class="slide" id="slide8">
+        <h2>Folie 7: Vorteile dieser Entwicklung</h2>
+        <h3>Zugänglichkeit</h3>
+        <ul>
+            <li>Programmierung wird für mehr Menschen zugänglich.</li>
+            <li>Senkt die Eintrittsbarrieren für technische Tätigkeiten.</li>
+        </ul>
 
-    <h3>Produktivität</h3>
-    <ul>
-        <li>Schnellere Umsetzung von Ideen.</li>
-        <li>Fokus auf Problemlösung statt auf Syntax.</li>
-    </ul>
-</div>
+        <h3>Produktivität</h3>
+        <ul>
+            <li>Schnellere Umsetzung von Ideen.</li>
+            <li>Fokus auf Problemlösung statt auf Syntax.</li>
+        </ul>
+    </div>
 
-<!-- Slide 9: Herausforderungen und Überlegungen -->
-<div class="slide" id="slide9">
-    <h2>Folie 8: Herausforderungen und Überlegungen</h2>
-    <h3>Genauigkeit und Kontrolle</h3>
-    <ul>
-        <li>Vertrauen in die korrekte Umsetzung der Anweisungen.</li>
-        <li>Notwendigkeit, die Ergebnisse zu überprüfen.</li>
-    </ul>
+    <!-- Slide 9: Herausforderungen und Überlegungen -->
+    <div class="slide" id="slide9">
+        <h2>Folie 8: Herausforderungen und Überlegungen</h2>
+        <h3>Genauigkeit und Kontrolle</h3>
+        <ul>
+            <li>Vertrauen in die korrekte Umsetzung der Anweisungen.</li>
+            <li>Notwendigkeit, die Ergebnisse zu überprüfen.</li>
+        </ul>
 
-    <h3>Sicherheitsaspekte</h3>
-    <ul>
-        <li>Risiken bei der Ausführung von generiertem Code.</li>
-        <li>Bedeutung von Überwachung und Kontrolle.</li>
-    </ul>
+        <h3>Sicherheitsaspekte</h3>
+        <ul>
+            <li>Risiken bei der Ausführung von generiertem Code.</li>
+            <li>Bedeutung von Überwachung und Kontrolle.</li>
+        </ul>
 
-    <h3>Rolle von Entwicklern</h3>
-    <ul>
-        <li>Wandel von der Code-Schreiberrolle zur Überwachungs- und Validierungsrolle.</li>
-        <li>Fokus auf komplexere Probleme und Architektur.</li>
-    </ul>
-</div>
+        <h3>Rolle von Entwicklern</h3>
+        <ul>
+            <li>Wandel von der Code-Schreiberrolle zur Überwachungs- und Validierungsrolle.</li>
+            <li>Fokus auf komplexere Probleme und Architektur.</li>
+        </ul>
+    </div>
 
-<!-- Slide 10: Zusammenfassung -->
-<div class="slide" id="slide10">
-    <h2>Folie 9: Zusammenfassung</h2>
-    <h3>Evolution der Programmierung</h3>
-    <ul>
-        <li>Von Bits und Bytes zur natürlichen Sprache.</li>
-    </ul>
+    <!-- Slide 10: Zusammenfassung -->
+    <div class="slide" id="slide10">
+        <h2>Folie 9: Zusammenfassung</h2>
+        <h3>Evolution der Programmierung</h3>
+        <ul>
+            <li>Von Bits und Bytes zur natürlichen Sprache.</li>
+        </ul>
 
-    <h3>Bedeutung von LLMs</h3>
-    <ul>
-        <li>Ermöglichen eine neue Art der Interaktion mit Computern.</li>
-    </ul>
+        <h3>Bedeutung von LLMs</h3>
+        <ul>
+            <li>Ermöglichen eine neue Art der Interaktion mit Computern.</li>
+        </ul>
 
-    <h3>Zukunftsaussichten</h3>
-    <ul>
-        <li>Weiterentwicklung von KI-Tools.</li>
-        <li>Mögliche Veränderungen in Arbeitsprozessen und -rollen.</li>
-    </ul>
-</div>
+        <h3>Zukunftsaussichten</h3>
+        <ul>
+            <li>Weiterentwicklung von KI-Tools.</li>
+            <li>Mögliche Veränderungen in Arbeitsprozessen und -rollen.</li>
+        </ul>
+    </div>
 
     <div class="navigation">
         <button class="nav-button" id="prevBtn" onclick="prevSlide()">&#8592; Zurück</button>
@@ -392,11 +395,11 @@ print(response['choices'][0]['message']['content'])
             }
             // Show current slide
             document.getElementById('slide' + n).classList.add('active');
-            
+
             // Update progress bar
             const progress = (n / totalSlides) * 100;
             document.getElementById('progressBar').style.width = `${progress}%`;
-            
+
             // Update counter
             document.getElementById('slideCounter').textContent = `Folie ${n} von ${totalSlides}`;
 
@@ -420,7 +423,7 @@ print(response['choices'][0]['message']['content'])
         }
 
         // Keyboard navigation
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             if (event.key === 'ArrowRight') {
                 nextSlide();
             } else if (event.key === 'ArrowLeft') {
@@ -432,4 +435,5 @@ print(response['choices'][0]['message']['content'])
         showSlide(1);
     </script>
 </body>
+
 </html>
