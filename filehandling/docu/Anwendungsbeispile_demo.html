@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KI-Anwendungen in der Übersetzungsvorbereitung</title>
+    <title>AI-Powered File Handling and SDL Integration</title>
     <style>
         :root {
             --bg-primary: #0f172a;
@@ -54,7 +54,7 @@
             text-align: center;
             margin-bottom: 30px;
             font-size: 2.5em;
-            color: var(--heading);
+            color: var(--text-primary);
             line-height: 1.4;
         }
 
@@ -88,32 +88,14 @@
             display: inline-block;
         }
 
-        .example {
+        .code-example {
             background: var(--bg-tertiary);
             padding: 1rem;
             border-radius: 8px;
             margin: 0.5rem 0;
             font-family: monospace;
             color: var(--text-secondary);
-        }
-
-        .tool-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-
-        .tool-item {
-            background: var(--bg-tertiary);
-            padding: 1rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--success);
-        }
-
-        .live-demo {
-            color: var(--demo);
-            font-weight: bold;
+            white-space: pre-wrap;
         }
 
         .navigation {
@@ -172,199 +154,288 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
-        .keyboard-hint {
-            position: fixed;
-            bottom: 90px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--bg-tertiary);
-            padding: 8px 16px;
-            border-radius: 20px;
-            color: var(--text-secondary);
-            font-size: 14px;
-            opacity: 0.8;
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        ul li:before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
         }
     </style>
 </head>
 
 <body>
     <div class="progress-bar" id="progressBar"></div>
-    <div class="slide-counter" id="slideCounter">Folie 1 von 5</div>
+    <div class="slide-counter" id="slideCounter">Slide 1 of 8</div>
 
     <!-- Slide 1: Introduction -->
     <div class="slide active" id="slide1">
-        <h1>KI-gestützte Dateivorbereitung für Übersetzungsprojekte</h1>
-        <h3>Praktische Anwendungen und Live-Demonstrationen</h3>
+        <h1>AI-Powered File Handling and SDL Integration</h1>
+        <h3>Advanced Document Processing with Code Interpreter</h3>
+        <div class="task-card">
+            <h3>Overview</h3>
+            <ul>
+                <li>XML Processing and Transformation</li>
+                <li>JSON and YAML Path Operations</li>
+                <li>PDF Manipulation and Text Extraction</li>
+                <li>Microsoft Office Integration</li>
+                <li>Regular Expression Processing</li>
+            </ul>
+        </div>
     </div>
 
-    <!-- Slide 2: Sensitive Data Handling -->
+    <!-- Slide 2: Key Technologies -->
     <div class="slide" id="slide2">
-        <h2>Sensible Daten und Termextraktion</h2>
+        <h2>Key Technologies and Tools</h2>
 
         <div class="task-card">
-            <h3>Sensible Daten Management</h3>
+            <h3>XPath</h3>
             <ul>
-                <li>Automatische Erkennung von personenbezogenen Daten
-                    <div class="example">Namen, E-Mails, Telefonnummern, Adressen</div>
+                <li>XML Navigation and Node Selection
+                    <div class="code-example">//element[@attribute='value']/*[contains(text(),'search')]</div>
                 </li>
-                <li>Platzhalter-System für sensible Informationen
-                    <div class="example">[[NAME_1]], [[EMAIL_1]], [[PHONE_1]]</div>
-                </li>
-                <li>CSV-Export für Wiedereinfügung
-                    <div class="example">ID, Original, Platzhalter</div>
+                <li>Attribute-based Filtering
+                    <div class="code-example">//text[@translate='yes' and @lang='en']</div>
                 </li>
             </ul>
-            <span class="demo-note">🔴 Live Demo: Automatische Erkennung und Ersetzung in Word-Dokumenten</span>
+        </div>
+
+        <div class="task-card">
+            <h3>JSONPath</h3>
+            <ul>
+                <li>JSON Document Navigation
+                    <div class="code-example">$.store.book[?(@.price < 10)].title</div>
+                </li>
+                <li>Array and Object Filtering
+                    <div class="code-example">$..book[(@.length-1)].title</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="task-card">
+            <h3>Regular Expressions (Regex)</h3>
+            <ul>
+                <li>Pattern Matching
+                    <div class="code-example">
+                        - Email: [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
+                        - Date: \d{4}-\d{2}-\d{2}
+                        - Phone: \+?\d{1,4}[-.\s]?\d{1,3}[-.\s]?\d{4}</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="task-card">
+            <h3>VBA Macros</h3>
+            <ul>
+                <li>Document Automation
+                    <div class="code-example">
+                        Sub ProcessDocument()
+                        With ActiveDocument.Content
+                        .Find.Execute FindText:="pattern", _
+                        ReplaceWith:="[[PLACEHOLDER]]", _
+                        Replace:=wdReplaceAll
+                        End With
+                        End Sub</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="task-card">
+            <h3>Python</h3>
+            <ul>
+                <li>File Processing Libraries
+                    <div class="code-example">
+                        import pandas as pd
+                        import xml.etree.ElementTree as ET
+                        from PyPDF2 import PdfReader
+                        from pptx import Presentation
+                        import json, yaml</div>
+                </li>
+                <li>Document Manipulation
+                    <div class="code-example">
+                        # XML Processing
+                        tree = ET.parse('file.xml')
+                        root = tree.getroot()
+
+                        # PDF Operations
+                        pdf = PdfReader("file.pdf")
+                        text = pdf.pages[0].extract_text()
+
+                        # Excel Operations
+                        df = pd.read_excel('data.xlsx')
+                        df.to_csv('output.csv')</div>
+                </li>
+            </ul>
         </div>
     </div>
+
+    <!-- Slide 3: XML Processing -->
     <div class="slide" id="slide3">
+        <h2>XML Processing and Analysis</h2>
+
         <div class="task-card">
-            <h3>Termextraktion aus PDFs</h3>
+            <h3>Basic XML Operations</h3>
             <ul>
-                <li>Häufigkeitsanalyse mit Code Interpreter</li>
-                <li>Excel VBA-Add-in Integration</li>
-                <li>Automatische Glossar-Erstellung</li>
+                <li>Translation Attributes Management
+                    <div class="code-example">
+                        &lt;text translate="yes" lang="en"&gt;Content to translate&lt;/text&gt;
+                        &lt;source translate="no"&gt;Keep as is&lt;/source&gt;</div>
+                </li>
+                <li>XPath Queries for Translation
+                    <div class="code-example">//text[@translate='yes' and @lang='en']</div>
+                </li>
+                <li>Date Validation with Regex
+                    <div class="code-example">pattern="\d{4}-\d{2}-\d{2}"</div>
+                </li>
             </ul>
-            <span class="demo-note">🔴 Live Demo: PDF-Analyse mit GPT-4</span>
+            <span class="demo-note">🔴 Live Demo: XML Attribute Modification</span>
         </div>
     </div>
 
-    <!-- Slide 3: Document Processing -->
+    <!-- Slide 3: Multilingual XML -->
+    <div class="slide" id="slide3">
+        <h2>Advanced XML Processing</h2>
+
+        <div class="task-card">
+            <h3>Multilingual Content Management</h3>
+            <ul>
+                <li>Language-Specific Content Handling
+                    <div class="code-example">
+                        &lt;segment id="001"&gt;
+                        &lt;text lang="en" translate="yes"&gt;English content&lt;/text&gt;
+                        &lt;text lang="de" translate="no"&gt;German content&lt;/text&gt;
+                        &lt;/segment&gt;</div>
+                </li>
+                <li>Email Pattern Recognition
+                    <div class="code-example">pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"</div>
+                </li>
+            </ul>
+            <span class="demo-note">🔴 Live Demo: Multilingual Content Copy</span>
+        </div>
+    </div>
+
+    <!-- Slide 4: JSON and YAML -->
     <div class="slide" id="slide4">
-        <h2>Dokumentenverarbeitung und OCR</h2>
+        <h2>JSON and YAML Processing</h2>
 
         <div class="task-card">
-            <h3>PowerPoint-Bildextraktion</h3>
+            <h3>JSON Path Operations</h3>
             <ul>
-                <li>Automatische Bildextraktion
-                    <div class="example">python pptx-image-extractor.py presentation.pptx</div>
+                <li>Selective Content Extraction
+                    <div class="code-example">$.translations[?(@.lang=='en')].content</div>
                 </li>
-                <li>OCR für eingebettete Texte
-                    <div class="example">Tesseract OCR + GPT-4 Korrektur</div>
-                </li>
-                <li>Textextraktion aus Diagrammen
-                    <div class="example">Automatische Erkennung von Beschriftungen und Legenden</div>
+                <li>Content Copying Between Languages
+                    <div class="code-example">
+                        {
+                        "translations": [
+                        {"lang": "en", "content": "Source text"},
+                        {"lang": "de", "content": ""}
+                        ]
+                        }</div>
                 </li>
             </ul>
-            <span class="demo-note">🔴 Live Demo: Bildextraktion und OCR</span>
+            <span class="demo-note">🔴 Live Demo: JSON Path Query</span>
         </div>
     </div>
+
+    <!-- Slide 5: PDF Operations -->
     <div class="slide" id="slide5">
+        <h2>PDF Document Processing</h2>
+
         <div class="task-card">
-            <h3>XML/JSON Verarbeitung</h3>
+            <h3>PDF Manipulation</h3>
             <ul>
-                <li>Element-Kopierung mit Quellerhaltung</li>
-                <li>XPath für SDL-Dateitypen</li>
-                <li>Konvertierung in lesbare Formate</li>
+                <li>Splitting and Merging
+                    <div class="code-example">from PyPDF2 import PdfReader, PdfWriter</div>
+                </li>
+                <li>Text Extraction and Analysis
+                    <div class="code-example">text = pdf_document.extract_text()</div>
+                </li>
             </ul>
-            <span class="demo-note">🔴 Live Demo: XML-Transformation</span>
+            <span class="demo-note">🔴 Live Demo: PDF Operations</span>
         </div>
     </div>
 
-    <!-- Slide 4: File Management -->
+    <!-- Slide 6: Word Processing -->
     <div class="slide" id="slide6">
-        <h2>Dateimanagement und Automatisierung</h2>
+        <h2>Microsoft Word Integration</h2>
 
         <div class="task-card">
-            <h3>PDF-Operations</h3>
+            <h3>Sensitive Data Management</h3>
             <ul>
-                <li>Split & Merge Funktionen
-                    <div class="example">PyPDF2 für automatisierte PDF-Manipulation</div>
+                <li>VBA Macro Generation
+                    <div class="code-example">
+                        Sub ExtractSensitiveData()
+                        Dim doc As Document
+                        Set doc = ActiveDocument
+                        ' AI-generated macro code
+                        End Sub</div>
                 </li>
-                <li>Batch-Konvertierung
-                    <div class="example">Word → PDF mit PowerShell/Python</div>
+                <li>Placeholder Replacement System
+                    <div class="code-example">[[NAME_1]], [[EMAIL_1]], [[PHONE_1]]</div>
                 </li>
             </ul>
+            <span class="demo-note">🔴 Live Demo: Word Macro Execution</span>
         </div>
     </div>
+
+    <!-- Slide 7: PowerPoint Processing -->
     <div class="slide" id="slide7">
-        <div class="task-card">
-            <h3>Dateiorganisation</h3>
-            <ul>
-                <li>Metadaten-basierte Sortierung
-                    <div class="example">Nach Autor, Datum, Projektcode sortieren</div>
-                </li>
-                <li>Batch-Metadaten-Entfernung
-                    <div class="example">Vertrauliche Informationen entfernen</div>
-                </li>
-                <li>Automatische Archivierung
-                    <div class="example">Nach Projektabschluss archivieren</div>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Slide 5: Automation Tools -->
-    <div class="slide" id="slide8">
-        <h2>Automatisierungstools und Regex</h2>
+        <h2>PowerPoint Content Extraction</h2>
 
         <div class="task-card">
-            <h3>Windows Task Scheduler Integration</h3>
+            <h3>Media and Text Extraction</h3>
             <ul>
-                <li>Automatische Backup-Erstellung</li>
-                <li>Regelmäßige Dateiorganisation</li>
-                <li>Nächtliche Batch-Verarbeitung</li>
-            </ul>
-        </div>
-    </div>
-    <div class="slide" id="slide9">
-        <div class="task-card">
-            <h3>Regex für Qualitätskontrolle</h3>
-            <ul>
-                <li>SDL Quality Checker Integration
-                    <div class="example">Konsistenzprüfung von Zahlen und Einheiten</div>
+                <li>Image Extraction
+                    <div class="code-example">from pptx import Presentation
+                        prs = Presentation("sample.pptx")</div>
                 </li>
-                <li>Benutzerdefinierte Regex-Muster
-                    <div class="example">
-                        - Produktcodes: [A-Z]{2}\d{4}-\d{2}
-                        - Datumsformate: \d{2}\.\d{2}\.\d{4}
-                        - Versionsnummern: v\d+\.\d+\.\d+
-                    </div>
-                </li>
-                <li>Automatische Korrekturen
-                    <div class="example">Formatierung von Zahlen und Einheiten</div>
+                <li>Text Content Export
+                    <div class="code-example">df = pd.DataFrame(extracted_text)
+                        df.to_excel("slide_content.xlsx")</div>
                 </li>
             </ul>
-            <span class="demo-note">🔴 Live Demo: Regex-basierte Qualitätsprüfung</span>
+            <span class="demo-note">🔴 Live Demo: PowerPoint Content Export</span>
         </div>
     </div>
 
     <div class="navigation">
-        <button class="nav-button" id="prevBtn" onclick="prevSlide()">&#8592; Zurück</button>
-        <button class="nav-button" id="nextBtn" onclick="nextSlide()">Weiter &#8594;</button>
+        <button class="nav-button" id="prevBtn" onclick="prevSlide()">← Previous</button>
+        <button class="nav-button" id="nextBtn" onclick="nextSlide()">Next →</button>
     </div>
 
     <script>
         let currentSlide = 1;
-        const totalSlides = 5; // Update this number if you add/remove slides
+        const totalSlides = 8;
 
         function showSlide(n) {
-            // Hide all slides
             const slides = document.querySelectorAll('.slide');
             slides.forEach(slide => {
                 slide.classList.remove('active');
                 slide.style.display = 'none';
             });
 
-            // Show current slide
             const currentSlideElement = document.getElementById('slide' + n);
             if (currentSlideElement) {
                 currentSlideElement.classList.add('active');
                 currentSlideElement.style.display = 'block';
             }
 
-            // Update progress bar
             const progress = (n / totalSlides) * 100;
             document.getElementById('progressBar').style.width = `${progress}%`;
-
-            // Update counter
-            document.getElementById('slideCounter').textContent = `Folie ${n} von ${totalSlides}`;
-
-            // Update button states
+            document.getElementById('slideCounter').textContent = `Slide ${n} of ${totalSlides}`;
             document.getElementById('prevBtn').disabled = n === 1;
             document.getElementById('nextBtn').disabled = n === totalSlides;
-
-            // Scroll to top
             window.scrollTo(0, 0);
         }
 
@@ -382,7 +453,6 @@
             }
         }
 
-        // Keyboard navigation
         document.addEventListener('keydown', function (event) {
             if (event.key === 'ArrowRight') {
                 nextSlide();
@@ -391,7 +461,6 @@
             }
         });
 
-        // Touch navigation
         let touchStartX = 0;
         let touchEndX = 0;
 
@@ -407,24 +476,17 @@
         function handleSwipe() {
             const swipeThreshold = 50;
             if (touchEndX < touchStartX - swipeThreshold) {
-                nextSlide(); // Swipe left
+                nextSlide();
             }
             if (touchEndX > touchStartX + swipeThreshold) {
-                prevSlide(); // Swipe right
+                prevSlide();
             }
         }
 
-        // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             showSlide(1);
-
-            // Hide keyboard hint on mobile devices
-            if ('ontouchstart' in window) {
-                document.querySelector('.keyboard-hint').style.display = 'none';
-            }
         });
 
-        // Handle window resize
         window.addEventListener('resize', () => {
             showSlide(currentSlide);
         });
