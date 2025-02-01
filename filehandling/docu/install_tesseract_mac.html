@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Installing Tesseract on Mac Using Homebrew</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+      background-color: #fafafa;
+      color: #333;
+    }
+    h1 {
+      color: #444;
+    }
+    .step {
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border-radius: 4px;
+      overflow: auto;
+    }
+    code {
+      font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+      background: #f4f4f4;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Installing Tesseract on Mac Using Homebrew</h1>
+
+  <div class="step">
+    <h2>Step 1: Open Terminal</h2>
+    <p>
+      Click the Spotlight icon (magnifying glass) in the upper-right corner of your screen, type <strong>Terminal</strong>, and press <strong>Enter</strong>.
+      Alternatively, you can navigate to <code>Applications &gt; Utilities &gt; Terminal</code>.
+    </p>
+  </div>
+
+  <div class="step">
+    <h2>Step 2: Install Homebrew</h2>
+    <p>
+      Homebrew is a package manager that simplifies installing software on macOS.
+      Copy and paste the following command into Terminal:
+    </p>
+    <pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre>
+    <p>
+      Follow the on-screen instructions. You may be asked for your administrator password.
+    </p>
+  </div>
+
+  <div class="step">
+    <h2>Step 3: Verify Homebrew Installation</h2>
+    <p>
+      To ensure Homebrew is installed correctly, type:
+    </p>
+    <pre><code>brew --version</code></pre>
+    <p>
+      You should see Homebrew's version information displayed in the Terminal.
+    </p>
+  </div>
+
+  <div class="step">
+    <h2>Step 4: Install Tesseract</h2>
+    <p>
+      Now, install Tesseract by running the following command in Terminal:
+    </p>
+    <pre><code>brew install tesseract</code></pre>
+    <p>
+      Homebrew will download Tesseract along with any required dependencies.
+    </p>
+  </div>
+
+  <div class="step">
+    <h2>Step 5: Verify Tesseract Installation</h2>
+    <p>
+      Finally, check if Tesseract is installed correctly by typing:
+    </p>
+    <pre><code>tesseract --version</code></pre>
+    <p>
+      This command should display the installed version of Tesseract.
+    </p>
+  </div>
+  
+</body>
+</html>
