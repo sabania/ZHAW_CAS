@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation Navigator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            display: flex;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            background: #1e1e1e;
+            padding: 1rem;
+            color: #fff;
+            overflow-y: auto;
+            height: 100vh;
+            width: 300px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+            /* Ensures it is on top of the iframe */
+        }
+
+        .nav-header {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #333;
+            color: #fff;
+        }
+
+        .file-list {
+            list-style: none;
+        }
+
+        .file-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .file-list a {
+            display: block;
+            padding: 0.5rem;
+            color: #e1e1e1;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .file-list a:hover {
+            background-color: #2d2d2d;
+        }
+
+        /* Main Content Area */
+        .main-content {
+            margin-left: 300px;
+            /* Offset for sidebar */
+            flex-grow: 1;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            background: #ffffff;
+        }
+
+        /* Ensure iframe is visible */
+        #content-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            /* Ensure it's above the main content */
+            background-color: white;
+            /* Prevent transparency issues */
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="nav-header">Documentation Files</div>
+        <ul class="file-list">
+            <li><a href="1. fähigkeiten_llms_only.html" onclick="loadContent(event, this)">▹ Fähigkeiten LLMs Only</a>
+            </li>
+            <li><a href="2. how_llms_work.html" onclick="loadContent(event, this)">▹ How LLMs Work</a></li>
+            <li><a href="3. llm_vs_programming.html" onclick="loadContent(event, this)">▹ LLM vs Programming</a></li>
+            <li><a href="4. codeinterpreter.html" onclick="loadContent(event, this)">▹ Code Interpreter</a></li>
+            <li><a href="Anwendungsbeispiledemo.html" onclick="loadContent(event, this)">▹ Anwendungsbeispiele Demo</a>
+            </li>
+            <li><a href="5. envrionment-setup.pdf" onclick="loadPDF(event, this)">📄 Environment Setup</a></li>
+            <li><a href="6. string_manipulation.html" onclick="loadContent(event, this)">▹ String Manipulation</a></li>
+
+            <li><a href="filehandling.html" onclick="loadContent(event, this)">▹ File Handling</a></li>
+            <li><a href="xml_handling.html" onclick="loadContent(event, this)">▹ XML Handling</a></li>
+            <li><a href="json_handling.html" onclick="loadContent(event, this)">▹ JSON Handling</a></li>
+            <li><a href="csv_excel_handling.html" onclick="loadContent(event, this)">▹ CSV/Excel Handling</a></li>
+            <li><a href="pptx-image-export.html" onclick="loadContent(event, this)">▹ PPTX Image Export</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <iframe id="content-frame" src="about:blank"></iframe>
+    </main>
+
+    <script>
+        function loadContent(event, link) {
+            event.preventDefault();
+            const iframe = document.getElementById('content-frame');
+            iframe.src = link.getAttribute('href') + "?nocache=" + new Date().getTime(); // Prevent caching issues
+
+            iframe.onload = function () {
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                if (iframeDoc) {
+                    // Ensure first slide is visible inside iframe
+                    const firstSlide = iframeDoc.querySelector('.slide');
+                    if (firstSlide) {
+                        firstSlide.classList.add('active'); // Ensure first slide is visible
+                    }
+
+                    // Force JavaScript inside iframe to run
+                    const iframeWindow = iframe.contentWindow;
+                    if (iframeWindow && typeof iframeWindow.showSlide === "function") {
+                        iframeWindow.showSlide(1);
+                    }
+                }
+            };
+        }
+        function loadPDF(event, link) {
+            event.preventDefault();
+            const iframe = document.getElementById('content-frame');
+            const pdfURL = link.getAttribute('href');
+
+            // Check if browser supports embedded PDFs
+            const supportsPDFs = navigator.mimeTypes["application/pdf"] !== undefined;
+
+            if (supportsPDFs) {
+                // Load PDF directly in iframe
+                iframe.src = pdfURL;
+            } else {
+                // Use PDF.js viewer fallback if PDF embedding is not supported
+                iframe.src = `https://mozilla.github.io/pdf.js/web/viewer.html?file=${encodeURIComponent(pdfURL)}`;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
