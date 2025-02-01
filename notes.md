@@ -14,3 +14,13 @@ pip install -r requirements.txt
 
 - I have this file, now give me a regex to figure out which lines to not start with < or whitespace
 - xml start and end tag regex
+
+### run local server python
+
+To run a local server using Python, use the following command:
+
+```bash
+python -m http.server 8000
+```
+
+### run local server python
