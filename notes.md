@@ -24,3 +24,5 @@ python -m http.server 8000
 ```
 
 ### run local server python
+
+https://chatgpt.com/share/679e39a5-cea0-800b-9649-ccb6910fe2f3
